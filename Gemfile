@@ -61,8 +61,3 @@ end
 
 gem 'wdm' if Gem.win_platform?
 gem "tzinfo-data" if Gem.win_platform?
-
-readme_index:
-  enabled:          true
-  remove_originals: false
-  with_frontmatter: false
