@@ -131,7 +131,7 @@ defaults:
       theme_color:     rgb(32,32,32)
       accent_image:
         background:    rgb(32,32,32)
-        overlay:       false
+        overlay:       true
 
   # Don't include documents in assets in the sitemap
   - scope:
@@ -140,13 +140,13 @@ defaults:
       sitemap:         false
 
   # Don't include licenses in sitemap (feel free to delete)
-  - scope:
-      path:            licenses/
-    values:
-      layout:          plain
-      sitemap:         false
+  # - scope:
+  #    path:            licenses/
+  #  values:
+  #    layout:          plain
+  #    sitemap:         false
 
-  # # You can use the following to enable comments on all posts.
+  # You can use the following to enable comments on all posts.
   # - scope:
   #     type:            posts
   #   values:
@@ -219,15 +219,15 @@ hydejack:
   no_break_layout:     true
 
   # Set to `true` to disable the dynamic Table of Contents on large screens.
-  no_toc:              false
+  no_toc:              true
 
   # When set to `true`, will not extend the content in the "third column" on large screens.
   # Instead, all content will remains within the center column.
   # Note that this will not affect the Table of Contents, use `no_toc` instead.
-  no_third_column:     false
+  no_third_column:     true
 
   # Set to `true` if you don't like oversized headlines on large screens.
-  no_large_headings:   false
+  no_large_headings:   true
 
   # Set to `true` if you do not want to expose your resume and projects
   # in machine-readable formats.
@@ -248,11 +248,11 @@ hydejack:
   # When enabled, no user-related data will be stored until the user gives consent.
   cookies_banner:      false
 
-  # Set to `true` if you would like to add a "Powered by Hydejack" link in the footer.
+  # PRO version - Set to `true` if you would like to add a "Powered by Hydejack" link in the footer.
   # Note that this setting has no effect when using the free version.
   advertise:           false
 
-  # Buyers of the PRO version can opt to hide all dates from the theme.
+  # PRO version - Buyers of the PRO version can opt to hide all dates from the theme.
   # Frequent consumers of online content will know that nothing devalues a post like
   # seeing an old date. 
   hide_dates:          false
@@ -260,7 +260,7 @@ hydejack:
   # Similarly, showing last modified date can devalue a post if it is too far in the past.
   hide_last_modified:  false
 
-  # Note that dark mode only works in the PRO version of Hydejack.
+  # PRO version - Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
     # Set to `true` to always use the dark theme.
     always:            false
