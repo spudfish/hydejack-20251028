@@ -1,0 +1,51 @@
+
+<div class="top-work">
+
+  <!-- [1] TEXT BLOCK -->
+  <div class="top-work__text">
+
+    <!-- [1a] Title -->
+    <h3 class="top-work__title">{{ include.title }}</h3>
+
+    <!-- [1b] Description (supports Markdown) -->
+    {% if include.desc %}
+      <div class="top-work__desc">
+        {{ include.desc | markdownify }}
+      </div>
+    {% endif %}
+
+    <!-- [1c] Call to action (always present, supports Markdown) -->
+    <p class="top-work__call">
+      {{ include.call_to_action | markdownify }}
+    </p>
+
+  </div>
+  <!-- [END TEXT BLOCK] -->
+
+  <!-- [2] IMAGE BLOCK -->
+  {% assign img_src = include.image %}
+  {% if include.image_file and (include.image == nil or include.image == "") %}
+    {% assign img_src = '/assets/media/' | append: include.image_file %}
+  {% endif %}
+
+  {% if img_src %}
+    <div class="top-work__image">
+
+      <!-- [2a] If image_link is provided, wrap image in <a> -->
+      {% if include.image_link %}
+        <a href="{{ include.image_link }}" target="_blank" rel="noopener">
+          <img src="{{ img_src }}" alt="{{ include.image_alt | default: include.title }}">
+        </a>
+      {% else %}
+        <!-- [2b] Otherwise, plain image -->
+        <img src="{{ img_src }}" alt="{{ include.image_alt | default: include.title }}">
+      {% endif %}
+
+    </div>
+  {% endif %}
+  <!-- [END IMAGE BLOCK] -->
+
+</div>
+
+<!-- [3] Divider line between entries -->
+<hr class="top-work__rule">

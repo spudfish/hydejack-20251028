@@ -12,3 +12,44 @@
     margin: 1rem 0;
   }
 }
+
+@import "top-work";
+
+/* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
+$scroll-offset: 88px; /* tweak to match your sticky header height */
+
+.anchor {
+  scroll-margin-top: $scroll-offset; /* modern browsers */
+}
+
+/* If you use in-page TOC or other anchor targets that aren't <section> */
+[id] {
+  scroll-margin-top: $scroll-offset;
+}
+
+/* Create a hidden spacer above targets when navigated, for legacy browsers */
+.anchor:target::before {
+  content: "";
+  display: block;
+  height: 88px;   /* same as $scroll-offset */
+  margin-top: -88px;
+}
+
+
+/* when your header is taller on small screens, this helps */
+
+$scroll-offset-desktop: 88px;
+$scroll-offset-mobile: 64px;
+
+.anchor { scroll-margin-top: $scroll-offset-desktop; }
+
+@media (max-width: 760px) {
+  .anchor {
+    scroll-margin-top: $scroll-offset-mobile;
+  }
+
+  .anchor:target::before {
+    height: $scroll-offset-mobile;
+    margin-top: -$scroll-offset-mobile;
+  }
+}
