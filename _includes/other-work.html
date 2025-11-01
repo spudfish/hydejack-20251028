@@ -1,0 +1,11 @@
+<section id="other-work" class="section section--other-work">
+  <h3>Other Work</h3>
+  <div class="other-work__grid">
+    {% assign items = site.data.other-work | sort: "order" %}
+    {% for item in items %}
+      <a href="{{ item.link_url }}" target="_blank" rel="noopener" title="{{ item.title }}">
+        <img src="/assets/media/{{ item.image_file }}" alt="{{ item.alt }}" width="150" height="auto" />
+      </a>
+    {% endfor %}
+  </div>
+</section>
