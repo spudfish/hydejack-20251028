@@ -1,3 +1,4 @@
+
 <div class="top-work">
 
   <!-- [1] TEXT BLOCK -->
@@ -27,35 +28,12 @@
     {% assign img_src = '/assets/media/' | append: include.image_file %}
   {% endif %}
 
-  {%- comment -%} ---- NEW: normalize internal image path & add baseurl ---- {%- endcomment -%}
-  {% if img_src %}
-    {% unless img_src contains '://' %}
-      {% assign first_char = img_src | slice: 0, 1 %}
-      {% if first_char != '/' %}
-        {% assign img_src = '/' | append: img_src %}
-      {% endif %}
-      {% assign img_src = img_src | relative_url %}
-    {% endunless %}
-  {% endif %}
-
-  {%- comment -%} ---- NEW: normalize internal image_link too ---- {%- endcomment -%}
-  {% assign link_href = include.image_link %}
-  {% if link_href %}
-    {% unless link_href contains '://' %}
-      {% assign first_char = link_href | slice: 0, 1 %}
-      {% if first_char != '/' %}
-        {% assign link_href = '/' | append: link_href %}
-      {% endif %}
-      {% assign link_href = link_href | relative_url %}
-    {% endunless %}
-  {% endif %}
-
   {% if img_src %}
     <div class="top-work__image">
 
       <!-- [2a] If image_link is provided, wrap image in <a> -->
-      {% if link_href %}
-        <a href="{{ link_href }}" target="_blank" rel="noopener">
+      {% if include.image_link %}
+        <a href="{{ include.image_link }}" target="_blank" rel="noopener">
           <img src="{{ img_src }}" alt="{{ include.image_alt | default: include.title }}">
         </a>
       {% else %}
