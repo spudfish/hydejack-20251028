@@ -1,5 +1,12 @@
-default:
-  name:
-  picture:
-  about:
-  links: []    # keep this empty so no socials appear
+
+
+author1:
+  name: Tal McThenia
+
+  # Sidebar social icons for this author.
+  # For known networks, you can give just a username.
+  # For unknown networks, provide a full URL.
+  social:
+    instagram: talmcthenia
+    # Bluesky is not a built-in key in some Hydejack builds; use a full URL:
+    bluesky: https://bsky.app/profile/talmcthenia.bsky.social

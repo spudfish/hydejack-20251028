@@ -1,10 +1,10 @@
-# Ignore docs files
+# Ignore generated site and drafts
 _site
 _drafts
 build
 dist
 
-# Numerous always-ignore extensions
+# Always-ignore file extensions
 *.diff
 *.err
 *.orig
@@ -29,20 +29,27 @@ nbproject
 *.sublime-workspace
 .idea
 
-# Folders to ignore
+# Folders and files to ignore
 node_modules
 package-lock.json
-vendor
+vendor/
 .sass-cache
 .jekyll-metadata
 .jekyll-cache
+.bundle/
 .ruby-lsp
 .wrangler
 *.gem
-Gemfile.lock
 _zip
 /stats.json
-.dev.vars
-
+/dev.vars
 /assets/js/*hydejack-*
 /_sass/*/__*__/*
+
+# Hydejack + Siteleaf additions
+# (Added per cleanup workbook, Nov 2025)
+# Ignore generated and temporary artifacts
+/.jekyll-cache
+/vendor
+/.bundle
+.DS_Store
