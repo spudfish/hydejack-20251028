@@ -2,8 +2,10 @@
 # Site Config (One-Page, No Blog)
 # ========================================================================================
 # If this is a project site at https://USERNAME.github.io/REPO-NAME/
-url: "https://spudfish.github.io"
-baseurl: "/hydejack-20251028"
+# url: "https://spudfish.github.io"
+# baseurl: "/hydejack-20251028"
+# 2025 1101 failed to fix issue with images
+
 
 # If this is a user/organization site at https://USERNAME.github.io/
 # url: "https://USERNAME.github.io"
