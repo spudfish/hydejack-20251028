@@ -1,16 +1,54 @@
 <!-- OTHER WORK ITEM TEMPLATE -->
-<!--  This file is included once per logo/link in the loop above. -->
-<!-- It receives four parameters:
-     image_file  → filename from /assets/media/
-     link_url    → external article link
-     alt         → alt text for accessibility
-     title       → hover text tooltip -->
+<!--  This file is included once per logo/link in the loop above.
+     Receives four parameters via include:
+       image_file  → filename from /assets/media/
+       link_url    → external or internal link (normalized if internal)
+       alt         → alt text for accessibility (defaults to title)
+       title       → hover text tooltip
+-->
 
-{% assign src = '/assets/media/' | append: include.image_file %}
+{%- comment -%} Build image URL from filename {%- endcomment -%}
+{%- assign ow_img = nil -%}
+{%- if include.image_file -%}
+  {%- assign ow_img = '/assets/media/' | append: include.image_file -%}
+{%- endif -%}
 
-<!-- LINK + IMAGE -->
-<a href="{{ include.link_url }}" target="_blank" rel="noopener"
-   title="{{ include.title }}" class="other-work__item">
-  <img src="{{ src }}" alt="{{ include.alt }}" width="150" height="auto">
-</a>
+{%- comment -%} Normalize internal image path and apply baseurl {%- endcomment -%}
+{%- if ow_img -%}
+  {%- unless ow_img contains '://' -%}
+    {%- assign img_first = ow_img | slice: 0, 1 -%}
+    {%- if img_first != '/' -%}
+      {%- assign ow_img = '/' | append: ow_img -%}
+    {%- endif -%}
+    {%- assign ow_img = ow_img | relative_url -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- comment -%} Normalize link (supports external + internal) {%- endcomment -%}
+{%- assign ow_href = include.link_url -%}
+{%- if ow_href -%}
+  {%- unless ow_href contains '://' -%}
+    {%- assign href_first = ow_href | slice: 0, 1 -%}
+    {%- if href_first != '/' -%}
+      {%- assign ow_href = '/' | append: ow_href -%}
+    {%- endif -%}
+    {%- assign ow_href = ow_href | relative_url -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- comment -%} Alt text fallback {%- endcomment -%}
+{%- assign ow_alt = include.alt | default: include.title -%}
+
+{%- comment -%} Render {%- endcomment -%}
+{%- if ow_img -%}
+  {%- if ow_href -%}
+    <a href="{{ ow_href }}" target="_blank" rel="noopener"
+       title="{{ include.title }}" class="other-work__item">
+      <img src="{{ ow_img }}" alt="{{ ow_alt }}" width="150">
+    </a>
+  {%- else -%}
+    <img src="{{ ow_img }}" alt="{{ ow_alt }}" width="150" class="other-work__item">
+  {%- endif -%}
+{%- endif -%}
+
 <!-- [END OTHER WORK ITEM TEMPLATE] -->

@@ -1,8 +1,7 @@
 ---
 title: Listen to Seasonal Updates, episodes by Tal McThenia in Rumblestrip Vermont
 order: 9
-image_file: rumblestrip-vermont.png
+image_file: rumblestrip.png
 link_url: https://www.rumblestripvermont.com/search?q=tal%20mcthenia
 alt: RumbleStrip Vermont logo
 ---
-
