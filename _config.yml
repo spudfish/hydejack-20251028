@@ -94,15 +94,19 @@ hydejack:
 
 # Collections — disable output if unused (or delete this block entirely)
 collections:
-  featured_categories:
-    permalink: /:name/
-    output:    false
-  featured_tags:
-    permalink: /tag-:name/
-    output:    false
-  projects:
-    permalink: /projects/:path/
-    output:    false
+  "top-work":   # KC custom set up
+    output: false
+  "other-work":   # KC custom set up
+    output: false
+#  featured_categories: # KC removed at set up
+#    permalink: /:name/
+#    output:    false
+#  featured_tags:       # KC removed at set up
+#    permalink: /tag-:name/
+#    output:    false
+#  projects:            # KC removed at set up
+#    permalink: /projects/:path/
+#    output:    false
 
 # File inclusion/exclusion
 exclude:

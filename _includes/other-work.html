@@ -1,11 +1,16 @@
-<section id="other-work" class="section section--other-work">
-  <h3>Other Work</h3>
-  <div class="other-work__grid">
-    {% assign items = site.data.other-work | sort: "order" %}
-    {% for item in items %}
-      <a href="{{ item.link_url }}" target="_blank" rel="noopener" title="{{ item.title }}">
-        <img src="/assets/media/{{ item.image_file }}" alt="{{ item.alt }}" width="150" height="auto" />
-      </a>
-    {% endfor %}
-  </div>
-</section>
+<!-- OTHER WORK ITEM TEMPLATE -->
+<!--  This file is included once per logo/link in the loop above. -->
+<!-- It receives four parameters:
+     image_file  → filename from /assets/media/
+     link_url    → external article link
+     alt         → alt text for accessibility
+     title       → hover text tooltip -->
+
+{% assign src = '/assets/media/' | append: include.image_file %}
+
+<!-- LINK + IMAGE -->
+<a href="{{ include.link_url }}" target="_blank" rel="noopener"
+   title="{{ include.title }}" class="other-work__item">
+  <img src="{{ src }}" alt="{{ include.alt }}" width="150" height="auto">
+</a>
+<!-- [END OTHER WORK ITEM TEMPLATE] -->
