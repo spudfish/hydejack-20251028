@@ -1,194 +1,134 @@
-# ========================================================================================
-# Site Config (One-Page, No Blog)
-# ========================================================================================
-# If this is a project site at https://USERNAME.github.io/REPO-NAME/
-url: "https://spudfish.github.io"
-baseurl: "/hydejack-20251028"
-
-# If this is a user/organization site at https://USERNAME.github.io/
-# url: "https://USERNAME.github.io"
-# baseurl: ""
-
-lang:        en
-title:       Tal McThenia
-description: >
-  View Tal's recent writing projects, learn about his personal background, or contact him from this one page portfolio site.
-tagline:     free-lance writer
-logo:        /assets/img/logo.png
-
-author: author1  # must match the key name in _data/authors.yml
-
-# Sidebar menu (anchors to sections on the single page)
-menu:
-  - title: Work
-    url: "#work"
-  - title: Bio
-    url: "#bio"
-  - title: Contact
-    url: "#contact"
-
-copyright:   © 2025. All rights reserved.
-
-# Theme
-theme: jekyll-theme-hydejack
-
-# Visual customization
-accent_image: /assets/img/sidebar-bg.jpg
-accent_color: rgb(79,177,186)
-theme_color:  rgb(25,55,71)
-
-# Defaults (optional; kept minimal)
+---
+title: Tal McThenia
+timezone: UTC
+collections:
+  other-work:
+    title: Other Work
+    output: false
+  posts:
+    title: Posts
+    output: true
+  top-work:
+    title: Top Work
+    output: false
+  uploads:
+    title: Uploads
+    output: true
 defaults:
-  - scope:
-      path: assets/
-    values:
-      sitemap: false
-  - scope:
-      type: projects
-    values:
-      seo:
-        type: WebPage
-  - scope:
-      type: featured_categories
-    values:
-      seo:
-        type: WebPage
-  - scope:
-      type: featured_tags
-    values:
-      seo:
-        type: WebPage
+- scope:
+    path: assets/
+  values:
+    sitemap: false
+- scope:
+    path: ''
+    type: projects
+  values:
+    seo:
+      type: WebPage
+- scope:
+    path: ''
+    type: featured_categories
+  values:
+    seo:
+      type: WebPage
+- scope:
+    path: ''
+    type: featured_tags
+  values:
+    seo:
+      type: WebPage
+url: https://spudfish.github.io
+baseurl: "/hydejack-20251028"
+lang: en
+description: 'View Tal''s recent writing projects, learn about his personal background,
+  or contact him from this one page portfolio site.
 
-# Hydejack settings — trimmed for no-blog setup
+'
+tagline: free-lance writer
+logo: "/assets/img/logo.png"
+author: author1
+menu:
+- title: Work
+  url: "#work"
+- title: Bio
+  url: "#bio"
+- title: Contact
+  url: "#contact"
+copyright: "© 2025. All rights reserved."
+theme: jekyll-theme-hydejack
+accent_image: "/assets/img/sidebar-bg.jpg"
+accent_color: rgb(79,177,186)
+theme_color: rgb(25,55,71)
 hydejack:
-  post_addons:    []      # no blog add-ons
-  project_addons: []      # no project add-ons
+  post_addons: []
+  project_addons: []
   no_mark_external: false
-  no_push_state:   false
-  no_drawer:       false
-  no_navbar:       false
-  no_search:       true
-  no_inline_css:   true
-  no_page_style:   true
+  no_push_state: false
+  no_drawer: false
+  no_navbar: false
+  no_search: true
+  no_inline_css: true
+  no_page_style: true
   no_break_layout: true
-  no_toc:          true
+  no_toc: true
   no_third_column: true
   no_large_headings: true
   no_structured_data: true
-  no_theme_color:  false
-  no_breadcrumbs:  false
-  use_lsi:         false  # related posts off
-  cookies_banner:  false
-  advertise:       false
-  hide_dates:      false
+  no_theme_color: false
+  no_breadcrumbs: false
+  use_lsi: false
+  cookies_banner: false
+  advertise: false
+  hide_dates: false
   hide_last_modified: false
   dark_mode:
-    always:  false
+    always: false
     dynamic: true
-    icon:    true
+    icon: true
   offline:
-    enabled:       false
+    enabled: false
     cache_version: 13
     precache_assets:
-      - /assets/img/swipe.svg
-
-# Collections — disable output if unused (or delete this block entirely)
-collections:
-  "top-work":   # KC custom set up
-    output: false
-  "other-work":   # KC custom set up
-    output: false
-#  featured_categories: # KC removed at set up
-#    permalink: /:name/
-#    output:    false
-#  featured_tags:       # KC removed at set up
-#    permalink: /tag-:name/
-#    output:    false
-#  projects:            # KC removed at set up
-#    permalink: /projects/:path/
-#    output:    false
-
-# File inclusion/exclusion
+    - "/assets/img/swipe.svg"
 exclude:
-  - .jekyll-cache
-  - .sass-cache
-  - .ruby-lsp
-  - .wrangler
-  - '*.toml'
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - functions
-  - '*-unused.md'        # <— KC added 2025 1031
-  
+- ".jekyll-cache"
+- ".sass-cache"
+- ".ruby-lsp"
+- ".wrangler"
+- "*.toml"
+- vendor
+- Gemfile
+- Gemfile.lock
+- functions
+- "*-unused.md"
 include:
-  - _routes.json
-  - .well-known
-  - LICENSE.md
-
-# Plugins — blog-related and others removed here and in Gemfile on set up.
+- _routes.json
+- ".well-known"
+- LICENSE.md
 plugins:
-  - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
-# - jekyll-default-layout   #
-# - jekyll-feed          # <— for blogs
-# - jekyll-paginate      # <— for blogs
-# - jekyll-readme-index      # disabled below
-# - jekyll-optional-front-matter
-# - jekyll-relative-links
-# - jekyll-titles-from-headings
-# - jekyll-last-modified-at
-# - jekyll-compose
-
-# Plugin configs (trimmed)
+- jekyll-include-cache
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-redirect-from
 optional_front_matter:
   remove_originals: true
-
 readme_index:
-  enabled:       false      # prevents README from acting as index
+  enabled: false
   remove_originals: false
   with_frontmatter: false
-
 relative_links:
   collections: true
-
 titles_from_headings:
   strip_title: true
   collections: true
-
 compress_html:
-  comments: ["<!--", "-->"]
+  comments:
+  - "<!--"
+  - "-->"
   clippings: all
   endings: all
   ignore:
-    envs: [development]
-
+    envs:
+    - development
 sass:
   style: compressed
-
-# Jekyll Compose Defaults — optional; remove if you want zero blog scaffolding
-# jekyll_compose:
-#   default_front_matter:
-#     drafts:
-#       layout: post
-#       description: >
-#         A short ~160 character description...
-#       image:
-#         path: /assets/img/sidebar-bg.jpg
-#     posts:
-#       layout: post
-#       description: >
-#         A short ~160 character description...
-#       image:
-#         path: /assets/img/sidebar-bg.jpg
-#     projects:
-#       layout: project
-#       description: >
-#         A short ~160 character description...
-#       image:
-#         path: /assets/img/sidebar-bg.jpg
-#       links:
-#         - title: Project Link
-#           url: https://example.com

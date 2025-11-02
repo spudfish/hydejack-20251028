@@ -1,8 +1,8 @@
 ---
+title: Tal McThenia
+permalink: "/"
 layout: default
-title: "Tal McThenia"
-subtitle: "Freelance Writer"
-permalink: /
+subtitle: Freelance Writer
 ---
 
 {% include sections.html %}

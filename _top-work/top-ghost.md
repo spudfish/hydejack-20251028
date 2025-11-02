@@ -1,9 +1,12 @@
 ---
+title: The Ghost of Bobby Dunbar
 order: 2
-title: "The Ghost of Bobby Dunbar"
-desc: "Margaret Dunbar Cutright grew up with the tale of her grandfather’s kidnapping. When she dug deeper, the legend gave way to mystery, generations of festering pain, and a calling to find truth."
+desc: Margaret Dunbar Cutright grew up with the tale of her grandfather’s kidnapping.
+  When she dug deeper, the legend gave way to mystery, generations of festering pain,
+  and a calling to find truth.
 call_to_action: "[Listen](http://www.thisamericanlife.org/radio-archives/episode/352/the-ghost-of-bobby-dunbar)"
 image_file: top-ghost.png
 image_link: http://www.thisamericanlife.org/radio-archives/episode/352/the-ghost-of-bobby-dunbar
-image_alt: "This American Life logo"
+image_alt: This American Life logo
 ---
+
