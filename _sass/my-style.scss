@@ -1,3 +1,64 @@
+/* DEPRECATED: @import "top-work"; */
+@use "top-work" as *;
+
+/* Set of blue coloring by KC at site set up */
+:root {
+  --color-cover-overlay: rgba(74, 122, 156, 0.4;) /* modern browsers */
+  --color-light-bg: #e8f2f8; /* prefers-color-scheme:light is on */
+  --color-dark-bg: #152e3d; /* prefers-color-scheme:dark is on */
+}
+/* Overlay color for cover drawer's sidebar background image */
+.sidebar-bg.sidebar-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(74, 122, 156, 0.4);
+  pointer-events: none;
+}
+
+/* Navbar and page content background (light theme) */
+@media (prefers-color-scheme: light) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #e8f2f8;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+  
+  .navbar,
+  .navbar > .content,
+  .nav-btn-bar {
+    background-color: #e8f2f8 !important;
+  }
+}
+
+/* TEST */
+@media (prefers-color-scheme: dark) {
+  body { outline: 15px solid red !important; }
+}
+
+/* Navbar and page content background (dark theme) */
+@media (prefers-color-scheme: dark) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #152e3d;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+  
+  .navbar,
+  .navbar > .content,
+  .nav-btn-bar {
+    background-color: #152e3d !important;
+  }
+}
+
 .dl-table {
   a {
     @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
@@ -10,7 +71,6 @@
 
 }
 
-@import "top-work";
 
 /* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
 $scroll-offset: 88px; /* tweak to match your sticky header height */
@@ -50,3 +110,4 @@ $scroll-offset-mobile: 64px;
     margin-top: -$scroll-offset-mobile;
   }
 }
+

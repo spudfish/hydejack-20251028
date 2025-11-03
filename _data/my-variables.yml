@@ -1,0 +1,15 @@
+---
+---
+
+---
+  root_font_size: 12 #px
+  root_font_size_medium: 15 #px
+  root_font_size_large: 20 #px
+
+  root_font_size_print: 8 #pt
+
+  root_line_height: 1.25
+
+  font_weight: 300 #=normal
+  font_weight_bold: 600 #=bold
+  font_weight_heading: 700 #=black (heavy)

@@ -2,7 +2,7 @@
 title: Tal McThenia
 permalink: "/"
 layout: default
-subtitle: Freelance Writer
+subtitle: Writer
 ---
 
 {% include sections.html %}

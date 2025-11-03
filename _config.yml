@@ -1,6 +1,27 @@
 ---
 title: Tal McThenia
-timezone: UTC
+url: https://spudfish.github.io
+baseurl: "/hydejack-20251028"
+lang: en
+description: "Read recent writing projects, find out about Tal McThenia, contact him or his literary agent from this one page portfolio site."
+tagline: writer
+logo: "/assets/img/logo.png"
+author: author1
+menu:
+- title: Work
+  url: "#work"
+- title: Bio
+  url: "#bio"
+- title: Contact
+  url: "#contact"
+copyright: "© 2025. All rights reserved."
+theme: jekyll-theme-hydejack
+accent_image: "/assets/img/sidebar-bg.jpg"
+accent_color: rgb(144,176,200)
+theme_color: rgb(48,95,135)
+google_fonts: "Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wdth,wght@87.5,300..800&display=swap"
+font:                  Open Sans, Helvetica, Arial, sans-serif
+font_heading:          Noticia Text, Open Sans, Helvetica, Arial, sans-serif
 collections:
   other-work:
     title: Other Work
@@ -37,28 +58,6 @@ defaults:
   values:
     seo:
       type: WebPage
-url: https://spudfish.github.io
-baseurl: "/hydejack-20251028"
-lang: en
-description: 'View Tal''s recent writing projects, learn about his personal background,
-  or contact him from this one page portfolio site.
-
-'
-tagline: free-lance writer
-logo: "/assets/img/logo.png"
-author: author1
-menu:
-- title: Work
-  url: "#work"
-- title: Bio
-  url: "#bio"
-- title: Contact
-  url: "#contact"
-copyright: "© 2025. All rights reserved."
-theme: jekyll-theme-hydejack
-accent_image: "/assets/img/sidebar-bg.jpg"
-accent_color: rgb(79,177,186)
-theme_color: rgb(25,55,71)
 hydejack:
   post_addons: []
   project_addons: []
