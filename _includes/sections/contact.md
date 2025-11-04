@@ -2,7 +2,9 @@
 <section id="contact" class="section section--work anchor">
 
   <!-- SUBSECTION HEADING -->
-  <h2>CONTACT</h2>
+  <h1>Contact</h1>
+        <p class="text-gray-400 dark:text-gray-400">
+	      Literary Agent: Zoë Pagnamenta, Calligraph</p>
 
  {% include contact.html %}
 
