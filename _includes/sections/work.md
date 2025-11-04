@@ -2,7 +2,7 @@
 <section id="work" class="section section--work anchor">
 
   <!-- SUBSECTION HEADING 1 of 2: Selected Work -->
-  <h2>Selected Work</h2>
+  <h2>Work</h2>
 
   <!-- LOOP: Render each Top Work item (collection: top-work) -->
   {% assign items = site["top-work"] | sort: "order" %}

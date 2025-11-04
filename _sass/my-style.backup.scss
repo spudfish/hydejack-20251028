@@ -16,13 +16,8 @@
   pointer-events: none;
 }
 
-/* REMOVE toggle button for light-dark modes */
-button#_dark-mode, button#_light-mode {
-    display:none !important;
-    border:none !important;
-    }
 /* Navbar and page content background (light theme) */
-@media (prefers-color-scheme: light) {
+@media screen and (prefers-color-scheme: light) {
   body::after {
     content: "";
     position: fixed;
@@ -42,15 +37,15 @@ button#_dark-mode, button#_light-mode {
 
 /* Navbar and page content background (dark theme) */
 @media (prefers-color-scheme: dark) {
-  body.dark-mode::after {
+  body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-color: #152e3d !important;
+    background-color: #152e3d;
     pointer-events: none;
     z-index: 0;
   }
-  body.dark-mode > * { position: relative; z-index: 1; }
+  body > * { position: relative; z-index: 1; }
   
   .navbar,
   .navbar > .content,

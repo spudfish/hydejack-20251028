@@ -1,8 +1,0 @@
-# _data/social.yml
-- title: Instagram
-  url: https://instagram.com/talmcthenia
-  icon: fa-brands fa-instagram
-
-- title: Bluesky
-  url: https://bsky.app/profile/talmcthenia.bsky.social
-  icon: fa-brands fa-bluesky

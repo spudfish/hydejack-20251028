@@ -22,19 +22,6 @@ theme_color: rgb(48,95,135)
 google_fonts: "Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wdth,wght@87.5,300..800&display=swap"
 font:                  Open Sans, Helvetica, Arial, sans-serif
 font_heading:          Noticia Text, Open Sans, Helvetica, Arial, sans-serif
-collections:
-  other-work:
-    title: Other Work
-    output: false
-  posts:
-    title: Posts
-    output: true
-  top-work:
-    title: Top Work
-    output: false
-  uploads:
-    title: Uploads
-    output: true
 defaults:
 - scope:
     path: assets/
@@ -89,6 +76,13 @@ hydejack:
     cache_version: 13
     precache_assets:
     - "/assets/img/swipe.svg"
+collections:
+  other-work:
+    title: Other Work
+    output: false
+  top-work:
+    title: Top Work
+    output: false
 exclude:
 - ".jekyll-cache"
 - ".sass-cache"
