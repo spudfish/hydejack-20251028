@@ -1,7 +1,7 @@
-<!-- 
+<!--
     =======================================================================
 
-    This is a working contact form. To receive email, 
+    This is a working contact form. To receive email,
     Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
 
     Create Access Key here 👉 https://web3forms.com/
@@ -14,44 +14,48 @@
     <div class="max-w-xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
       <div class="text-center">
         <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
-          Contact Tal Directly
+          Contact Us
         </h1>
         <p class="text-gray-400 dark:text-gray-400">
-          This form uses Web3Forms, a privacy-focused mail service that does not store your information on its servers. It screens out bots and sends messages from real humans directly to Tal's inbox.
+          This is a privacy-focused contact form. What you enter is <span class="italic">not stored</span> on third-party servers before it goes to Tal.
         </p>
       </div>
       <div class="m-7">
         <form action="https://api.web3forms.com/submit" method="POST" id="form">
           <input type="hidden" name="access_key" value="3d2ba915-f0cd-4311-97a9-3d0b9b7e452d" />
-          <input type="hidden" name="subject" value="A WEBSITE MESSAGE for TAL MCTHENIA" />
-          <input type="checkbox" name="carrot-hiding" id="" style="display: none;" />
+          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+          <input type="checkbox" name="botcheck" id="" style="display: none;" />
 
           <div class="flex mb-6 space-x-4">
             <div class="w-full md:w-1/2">
               <label for="fname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">First Name</label>
-              <input type="text" name="name" id="first_name" placeholder="John" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+              <input type="text" name="name" id="first_name" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
             </div>
             <div class="w-full md:w-1/2">
               <label for="lname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Last Name</label>
-              <input type="text" name="last_name" id="lname" placeholder="Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+              <input type="text" name="last_name" id="lname" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
             </div>
           </div>
 
           <div class="flex mb-6 space-x-4">
             <div class="w-full md:w-1/2">
               <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
-              <input type="email" name="email" id="email" placeholder="username@your-provider.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+              <input type="email" name="email" id="email" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
             </div>
 
             <div class="w-full md:w-1/2">
-              <label for="phone" class="block text-sm mb-2 text-gray-600 dark:text-gray-400">Phone Number (optional)</label>
-              <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-5678" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+              <label for="phone" class="block text-sm mb-2 text-gray-600 dark:text-gray-400">Phone Number</label>
+              <input type="text" name="phone" id="phone" placeholder="" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
             </div>
           </div>
           <div class="mb-6">
-            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Enter your message to Tal McThenia</label>
+            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Your Message</label>
 
-            <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+            <textarea rows="5" name="message" id="message" placeholder="Enter your message for Tal McThenia" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+        <p class="text-gray-400 dark:text-gray-400">
+          * Required for Tal to be able to respond to you. Your phone number is optional.
+        </p>
+          
           </div>
           <div class="mb-6">
             <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
