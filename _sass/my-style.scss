@@ -111,4 +111,62 @@ $scroll-offset-mobile: 64px;
   }
 }
 
+/* === Contact form (scoped, no collisions) === */
+/* === stacking for very narrow screens === */
+@media (max-width: 420px) { .cf-grid { grid-template-columns: 1fr; } }
 
+.cf-wrap { margin: 2rem 0; }
+.cf-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--body-bg);
+  border: 1px solid var(--border-color);
+  border-radius: .375rem;
+  box-shadow: 0 0 .75rem rgba(0,0,0,.06);
+  padding: 1rem;
+}
+.cf-intro { text-align: center; margin-bottom: .75rem; }
+.cf-note { color: var(--gray); margin: 0; }
+
+.cf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* stays two-columns even on small screens (your preference) */
+  gap: 1rem 1rem;
+}
+
+.cf-field { display: flex; flex-direction: column; }
+.cf-span-2 { grid-column: 1 / -1; }
+
+.cf-label { display: block; margin: 0 0 .375rem; font-weight: 600; }
+
+.cf-control {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  border: 1px solid var(--border-color);
+  border-radius: .25rem;
+  background: var(--body-bg);
+  color: var(--body-color);
+}
+.cf-control:focus {
+  outline: 0;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 .2rem var(--accent-color-faded);
+}
+textarea.cf-control { resize: vertical; }
+
+.cf-hint { margin: .375rem 0 0; color: var(--gray); font-size: .9em; }
+
+.cf-button {
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1px solid var(--accent-color);
+  border-radius: .25rem;
+  background: var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+}
+.cf-button:focus { outline: 0; box-shadow: 0 0 0 .2rem var(--accent-color-faded); }
+.cf-button:hover { filter: brightness(0.95); }
+
+.cf-result { text-align: center; color: var(--gray); margin-top: .5rem; }

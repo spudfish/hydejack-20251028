@@ -1,0 +1,56 @@
+<!--  This is a working contact form via  https://web3forms.com/
+      A registered Access Key is added below and has been tested.
+      
+      It is being inserted after an h1 tag for Contact.
+-->
+<div class="container my-5">
+  <div class="mx-auto shadow-sm rounded p-4 bg-white" style="max-width: 720px;">
+    <div class="text-center mb-3">
+      <p class="text-muted mb-0">
+        Please use this form to send inquires to Tal.<br/>
+        <strong>Privacy note:</strong> The information you enter here is <em>not stored</em> on third-party servers.
+      </p>
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST" id="form" novalidate>
+      <!-- keep your real key; shown here only because you pasted it -->
+      <input type="hidden" name="access_key" value="3d2ba915-f0cd-4311-97a9-3d0b9b7e452d">
+      <input type="hidden" name="subject" value="New Submission from Web3Forms">
+      <input type="checkbox" name="botcheck" style="display:none">
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="first_name" class="form-label">First name</label>
+          <input type="text" name="name" id="first_name" class="form-control" placeholder="*" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lname" class="form-label">Last name</label>
+          <input type="text" name="last_name" id="lname" class="form-control" placeholder="*" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="*" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phone" class="form-label">Phone number</label>
+          <input type="tel" name="phone" id="phone" class="form-control">
+        </div>
+
+        <div class="col-12 mb-2">
+          <label for="message" class="form-label">Message</label>
+          <textarea rows="5" name="message" id="message" class="form-control" placeholder="Enter your message for Tal McThenia *" required></textarea>
+        </div>
+
+        <div class="col-12 mb-3">
+          <button type="submit" class="w-100 p-2 rounded">Send Message</button>
+          <!-- If you want a styled button, add a tiny custom rule for this button in your CSS -->
+        </div>
+
+        <div class="col-12">
+          <p class="text-center text-muted" id="result" style="display:none;"></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

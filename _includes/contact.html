@@ -1,62 +1,52 @@
-<!--  This is a working contact form via  https://web3forms.com/
-      A registered Access Key is added below and has been tested.
-      
-      It is being inserted after an h1 tag for Contact.
--->
-
-<div class="flex items-center min-h-screen bg-gray-100 dark:bg-gray-900">
-  <div class="container mx-auto">
-    <div class="max-w-xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
-      <div class="text-center">
-        <p class="text-gray-400 dark:text-gray-400">
-          Privacy Note: The information that you enter here is <span class="italic">not being stored</span> on third-party servers.
-        </p>
-      </div>
-      <div class="m-7">
-        <form action="https://api.web3forms.com/submit" method="POST" id="form">
-          <input type="hidden" name="access_key" value="3d2ba915-f0cd-4311-97a9-3d0b9b7e452d" />
-          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-          <input type="checkbox" name="botcheck" id="" style="display: none;" />
-
-          <div class="flex mb-6 space-x-4">
-            <div class="w-full md:w-1/2">
-              <label for="fname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">First Name</label>
-              <input type="text" name="name" id="first_name" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-            </div>
-            <div class="w-full md:w-1/2">
-              <label for="lname" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Last Name</label>
-              <input type="text" name="last_name" id="lname" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-            </div>
-          </div>
-
-          <div class="flex mb-6 space-x-4">
-            <div class="w-full md:w-1/2">
-              <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
-              <input type="email" name="email" id="email" placeholder="*" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-            </div>
-
-            <div class="w-full md:w-1/2">
-              <label for="phone" class="block text-sm mb-2 text-gray-600 dark:text-gray-400">Phone Number</label>
-              <input type="text" name="phone" id="phone" placeholder="" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-            </div>
-          </div>
-          <div class="mb-6">
-            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Message</label>
-
-            <textarea rows="5" name="message" id="message" placeholder="Enter your message for Tal McThenia * " class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
-        <p class="text-gray-400 dark:text-gray-400">
-          * Required for Tal to be able to respond to you. Your phone number is optional.
-        </p>
-          
-          </div>
-          <div class="mb-6">
-            <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
-              Send Message
-            </button>
-          </div>
-          <p class="text-base text-center text-gray-400" id="result"></p>
-        </form>
-      </div>
+<!-- Included after an h1 tag, so no duplication here. -->
+<!-- Contact form via https://web3forms.com/ -->
+<div class="cf-wrap">
+  <div class="cf-card">
+    <div class="cf-intro">
+      <p class="cf-note">
+        Please use this form to send inquiries to Tal. <strong>For your privacy,</strong> note that the information you enter here is <em>not stored</em> on third-party servers.
+      </p>
     </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" novalidate>
+      <!-- keep your real key; shown here only because you pasted it -->
+      <input type="hidden" name="access_key" value="3d2ba915-f0cd-4311-97a9-3d0b9b7e452d">
+      <input type="hidden" name="subject" value="HEY-TAL! FROM YOUR WEBSITE">
+      <input type="checkbox" name="botcheck" style="display:none">
+
+      <div class="cf-grid">
+        <div class="cf-field">
+          <label for="first_name" class="cf-label">First name</label>
+          <input type="text" name="name" id="first_name" class="cf-control" placeholder="*" required>
+        </div>
+
+        <div class="cf-field">
+          <label for="last_name" class="cf-label">Last name</label>
+          <input type="text" name="last_name" id="last_name" class="cf-control" placeholder="*" required>
+        </div>
+
+        <div class="cf-field">
+          <label for="email" class="cf-label">Email address</label>
+          <input type="email" name="email" id="email" class="cf-control" placeholder="*" required>
+        </div>
+
+        <div class="cf-field">
+          <label for="phone" class="cf-label">Phone number</label>
+          <input type="tel" name="phone" id="phone" class="cf-control">
+        </div>
+
+        <div class="cf-field cf-span-2">
+          <label for="message" class="cf-label">Message</label>
+          <textarea rows="5" name="message" id="message" class="cf-control" placeholder="Enter your message for Tal McThenia *" required></textarea>
+          <p class="cf-hint">* Required so Tal can respond. A phone number is optional.</p>
+        </div>
+
+        <div class="cf-field cf-span-2">
+          <button type="submit" class="cf-button">Send Message</button>
+        </div>
+      </div>
+
+      <p class="cf-result" id="result" hidden></p>
+    </form>
   </div>
 </div>
