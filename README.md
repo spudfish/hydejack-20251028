@@ -34,7 +34,8 @@ Developed by Kathy Cannon in October 2025, as follows:
 
 * Brought old-school know in Dreamweaver from
     * only HTML5 and CSS without compilers or scripting 
-    * into the compiler world of GitHub 
+    * into the compiler world of GitHub
+* THIS LEARNING CURVE WAS SO STEEP into Github
 * Repository initiated from Hydejack Starter Kit
 * Repository visibility set to public, GitHhb Pages enabled
 * Functions built by Jekyll which uses:
@@ -43,7 +44,7 @@ Developed by Kathy Cannon in October 2025, as follows:
     * Sass driven css development, all for
     * DRY dont repeat yourself abstractions 
     * benefiting sprawling websites 
-* But gaining the functionality of a modern design
+* But gained the functionality of a modern design
 * Checkout the way the image splashes with 
     * a full cover image setting mood and menu
     * and slides off to the side for re-use
