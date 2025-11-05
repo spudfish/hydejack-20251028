@@ -6,7 +6,7 @@ Developed by Kathy Cannon in October 2025, as follows:
 * ChatGPT search described the free tier in GitHub hosting
     * a goodwill service helping freelancers 
     * and supporting entry to paid services
-* Agreed on Hydejack template with GitHub Pages tool
+* Agreed w client on Hydejack template with GitHub Pages tool
 * Compared web contact email services:
     * chose Web3Forms over Formspree 
     * Has no-storage privacy policy
