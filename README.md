@@ -18,24 +18,31 @@ Developed by Kathy Cannon in October 2025, as follows:
     * Pro tier pays for full documentation
     * ChatGPT offered code solutions with caveats
 * Overcame development challenges with:
-    * disabling/avoiding blog feature set
-    * initiating custom page layout
-    * customizing nav for single page layout
-    * setting up two work collections
-    * overlaying blue colors on b/w theme
-    * recreating custom layout styles
-    * re-styling publisher logos
-    * inserting privacy-focused contact form
+    * disabled/avoided blog feature set
+    * initiated custom page layout
+    * customized nav for single page layout
+    * set up two work collection w yaml data
+    * overlaid blue colors on b/w theme
+    * recreated custom layout styles
+    * re-styled publisher logos to blend in
+    * inserted privacy-focused contact form
 
 * Considered SiteLeaf for client editing but cannot trust
-    * initial entry caused unmarked disruption
-    * commit changes to config file were withdrawn
-    * all trace of disruption disappeared next day
+    * their initial entry caused unnotified unmarked disruption
+    * they commited changes to my config file then
+    * withdrew all identifiable traces next day
 
-* Brought old-school know in Dreamweaver from
+* Brought old-school 1999–2015 know-how in Dreamweaver from
     * only HTML5 and CSS without compilers or scripting 
     * into the compiler world of GitHub
-* THIS LEARNING CURVE WAS SO STEEP into Github
+    * THIS LEARNING CURVE WAS SO STEEP into Github
+* Set up local copy of repository with abstracted workflow 
+    * re-learned basic terminal commands (with Spouso help)
+    * installed new project verdion Ruby from Homebrew
+    * avoided install macOS command line tools
+    * followed vaguely-understood AI help suggestions
+* Edited with CotEditor, pushed commits with GutHhb Desktop
+    * Put off Visual Studio w co-pilot workflow  
 * Repository initiated from Hydejack Starter Kit
 * Repository visibility set to public, GitHhb Pages enabled
 * Functions built by Jekyll which uses:
