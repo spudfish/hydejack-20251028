@@ -42,7 +42,7 @@ button#_dark-mode, button#_light-mode {
 
 /* Navbar and page content background (dark theme) */
 @media (prefers-color-scheme: dark) {
-  body.dark-mode::after {
+  body::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -50,7 +50,7 @@ button#_dark-mode, button#_light-mode {
     pointer-events: none;
     z-index: 0;
   }
-  body.dark-mode > * { position: relative; z-index: 1; }
+  body > * { position: relative; z-index: 1; }
   
   .navbar,
   .navbar > .content,
@@ -70,7 +70,6 @@ button#_dark-mode, button#_light-mode {
   }
 
 }
-
 
 /* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
 $scroll-offset: 88px; /* tweak to match your sticky header height */
