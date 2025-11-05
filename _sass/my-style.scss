@@ -169,3 +169,18 @@ textarea.cf-control { resize: vertical; }
 .cf-button:hover { filter: brightness(0.95); }
 
 .cf-result { text-align: center; color: var(--gray); margin-top: .5rem; }
+
+.bio-photo {
+  float: right;
+  width: 200px;
+  margin: 0.5rem 0 0.5rem 1rem;
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+}
