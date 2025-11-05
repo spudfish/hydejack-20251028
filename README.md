@@ -1,7 +1,7 @@
 # Tal's Site Transfer and Update 2025
 
 Developed by Kathy Cannon in October 2025, as follows:
-* Editing problems with Wix made it unusable
+* Editing problems with Wix made their service unusable
 * Wanted paid-tier Weebly but Square support waning uncertainly
 * ChatGPT search described the free tier in GitHub hosting
     * a goodwill service helping freelancers 
