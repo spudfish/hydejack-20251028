@@ -7,6 +7,12 @@
   --color-light-bg: #e8f2f8; /* prefers-color-scheme:light is on */
   --color-dark-bg: #152e3d; /* prefers-color-scheme:dark is on */
 }
+
+.section {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
 /* Overlay color for cover drawer's sidebar background image */
 .sidebar-bg.sidebar-overlay::before {
   content: "";
@@ -170,17 +176,113 @@ textarea.cf-control { resize: vertical; }
 
 .cf-result { text-align: center; color: var(--gray); margin-top: .5rem; }
 
+/* === Bio Photo === */
 .bio-photo {
-  float: right;
-  width: 200px;
-  margin: 0.5rem 0 0.5rem 1rem;
-  text-align: center;
-  font-size: 0.8em;
-  color: #777;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  text-align: right;
 
   img {
+    max-width: 540px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .bio-photo__caption {
+    font-size: 0.8rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+  }
+}
+
+/* Push the photo to bottom-right when there's enough width */
+@media (min-width: 768px) {
+  .bio-photo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* === Bio Photo Block === */
+.bio-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1.5rem;
+  text-align: right;
+
+  img {
+    width: 75%;          /* 75% of the bio section's width */
+    max-width: 100%;     /* never exceed the section’s natural width */
+    min-width: 300px;    /* never shrink below 300px */
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .bio-photo__caption {
+    font-size: 0.8rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+  }
+}
+
+/* === Position bottom-right on larger screens === */
+@media (min-width: 768px) {
+  #bio {
+    position: relative; /* makes the section a positioning context */
+  }
+
+  .bio-photo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 1rem;
+  }
+}/* Bio photo sits at the end of the #bio section, aligned right, no overlap */
+.bio-photo {
+  /* keep it in normal flow */
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  /* push the whole block to the right edge */
+  margin: 1.5rem 0 0 auto;  /* auto left margin → right align */
+  clear: both;              /* ignore any earlier floats in content */
+
+  /* size the whole block relative to the section */
+  width: 75%;
+  min-width: 300px;         /* never smaller than 300px */
+  max-width: 100%;          /* don’t exceed the section’s width */
+  text-align: right;
+}
+
+.bio-photo img {
+  width: 100%;              /* fill the block width above */
+  max-width: 100%;          /* don’t upscale past natural size */
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.bio-photo__caption {
+  font-size: 0.8rem;
+  color: var(--text-muted, #666);
+  margin: 0;
+}
+
+/* Small screens: let it just use the section width */
+@media (max-width: 400px) {
+  .bio-photo {
     width: 100%;
-    border-radius: 8px;
-    display: block;
   }
 }

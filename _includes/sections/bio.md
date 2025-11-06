@@ -10,8 +10,8 @@
 <p>His work as a screenwriter includes: 'Shift', a PBS drama; science mysteries for Mosa Mack Science; and the Nick, Jr. series Butterbean’s Café.</p>
 <p>Tal grew up in Rockbridge County, Virginia. He lives in New York City and upstate New York with his boyfriend, the writer Brett Berk.</p>
 <div class="bio-photo">
-  <img src="/assets/media/tal.jpg" alt="Portrait of Tal McThenia">
-  <p>Photo by Stefanie Spina</p>
+  <img src="{{ '/assets/media/tal.jpg' | relative_url }}" alt="Portrait of Tal McThenia in blue shirt">
+  <p class="bio-photo__caption">Photo by Stefanie Spina</p>
 </div>
 </section>
 
