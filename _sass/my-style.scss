@@ -8,11 +8,6 @@
   --color-dark-bg: #152e3d; /* prefers-color-scheme:dark is on */
 }
 
-.section {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
 /* Overlay color for cover drawer's sidebar background image */
 .sidebar-bg.sidebar-overlay::before {
   content: "";
