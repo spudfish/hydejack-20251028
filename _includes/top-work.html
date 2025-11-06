@@ -12,17 +12,19 @@ Handles text, call_to_action, and image linking/normalization.
     <!-- [1a] Title -->
     <h3 class="top-work__title">{{ include.title }}</h3>
 
+<!-- [1c] Call to action (always present, supports Markdown) -->
+<p class="top-work__call">
+  {{ include.call_to_action
+     | markdownify
+     | replace: '<a href="', '<a target="_blank" rel="noopener" href="' }}
+</p>
+
     <!-- [1b] Description (supports Markdown) -->
     {% if include.desc %}
       <div class="top-work__desc">
         {{ include.desc | markdownify }}
       </div>
     {% endif %}
-
-    <!-- [1c] Call to action (always present, supports Markdown) -->
-    <p class="top-work__call">
-      {{ include.call_to_action | markdownify }}
-    </p>
 
   </div>
   <!-- [END TEXT BLOCK] -->
