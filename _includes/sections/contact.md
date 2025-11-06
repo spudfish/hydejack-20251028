@@ -4,7 +4,7 @@
   <!-- SUBSECTION HEADING -->
   <h1>Contact</h1>
         <p class="text-gray-400 dark:text-gray-400">
-	      Literary Agent: Zoë Pagnamenta, Calligraph</p>
+	      [Literary Agent: Zoë Pagnamenta, Calligraph](https://www.calligraphlit.com/)</p>
 
  {% include contact.html %}
 

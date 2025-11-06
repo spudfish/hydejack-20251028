@@ -45,6 +45,14 @@ defaults:
   values:
     seo:
       type: WebPage
+markdown: kramdown
+
+kramdown:
+  input: GFM          # Enables GitHub-Flavored Markdown (better link and list handling)
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+
 hydejack:
   post_addons: []
   project_addons: []
