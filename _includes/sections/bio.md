@@ -10,7 +10,7 @@
 </p>
 <p markdown="1">His writing has appeared in VanityFair.com, Audubon Magazine, American Express Departures, Bloomberg Businessweek, Popula, and Atlas Obscura, among other venues. His work as a screenwriter includes: 'Shift', a PBS drama; science mysteries for Mosa Mack Science; and the Nick, Jr. series Butterbean’s Café.</p>
 
-<p markdown="1">Tal grew up in Rockbridge County, Virginia. He lives in New York City and upstate New York with his boyfriend, the writer [Brett Berk](www.brettberk.com).</p>
+<p markdown="1">Tal grew up in Rockbridge County, Virginia. He lives in New York City and upstate New York with his boyfriend, the writer [Brett Berk](https://brettberk.com).</p>
 <div class="bio-photo">
   <img src="{{ '/assets/media/tal.jpg' | relative_url }}" alt="Portrait of Tal McThenia in blue shirt">
   <p class="bio-photo__caption">Photo by Stefanie Spina</p>
