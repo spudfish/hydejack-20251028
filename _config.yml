@@ -1,7 +1,7 @@
 ---
 title: Tal McThenia
-url: https://spudfish.github.io
-baseurl: "/hydejack-20251028"
+url: https://talmcthenia.com
+baseurl: ""    # must be empty for a root custom domain
 lang: en
 description: "Read recent writing projects, find out about Tal McThenia, contact him or his literary agent from this one page portfolio site."
 tagline: writer
