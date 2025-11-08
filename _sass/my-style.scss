@@ -74,18 +74,6 @@ button#_light-mode {
   text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
 }
 
-/* Download table link underline tuning (progressive enhancement) */
-.dl-table {
-  a {
-    @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
-      text-underline-offset: .8rem;
-    }
-    @supports not ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
-      padding-bottom: .45rem;
-    }
-  }
-}
-
 /* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
 $scroll-offset-desktop: 88px;
 $scroll-offset-mobile: 64px;
@@ -115,34 +103,63 @@ $scroll-offset-mobile: 64px;
   }
 }
 
+/* === TOP-WORK: 3-block layout (Title + Image + More) === */
+
 .top-work {
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 32%); /* ensure column ≥ image cap */
-  gap: 1.2rem;
+  grid-template-columns: 1fr minmax(220px, 32%);
+  column-gap: 1.2rem;
+  row-gap: 0.75rem;
   align-items: start;
   margin: 1.5rem 0;
+
+  /* desktop/tablet placement */
+  grid-template-areas:
+    "title media"
+    "more  media";
 }
 
-/* Let the grid item right-align itself; no flex needed */
-.top-work__image {
-  justify-self: end;
-  align-self: start;
+.top-work__title { 
+  grid-area: title; 
+  margin: 0 0 .5rem 0; 
 }
 
-/* One definitive rule set for the img (avoid duplicates/conflicts) */
+.top-work__image { 
+  grid-area: media; 
+  justify-self: end; 
+  align-self: start; 
+}
+
 .top-work__image img {
-  width: 100%;          /* fill its column */
-  max-width: 300px;     /* but never exceed 300px */
-  height: auto;
   display: block;
+  width: 100%;
+  max-width: 300px;     /* cap image width */
+  height: auto;
   border-radius: .375rem;
 }
 
-/* Mobile: stack; image on top */
-@media (max-width: 760px) {
-  .top-work { grid-template-columns: 1fr; }
-  .top-work__image { order: -1; margin-bottom: .5rem; }
+.top-work__more  { grid-area: more; }
+.top-work__desc  { margin: 1rem 0 0 0; }
+.top-work__call  { margin: 0.75rem 0 0 0; }
+
+/* Phones: Title → Image → More (explicit order) */
+@media (max-width: 640px) {
+  .top-work {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "media"
+      "more";
+  }
 }
+
+/* === Refine divider between top-work entries === */
+.top-work__rule {
+  border: none;   /* remove default border style entirely */
+  border-top: 1px solid rgba(74, 122, 156, 0.4); /* same as overlay */
+  margin: 1.2rem 0;   /* tighten vertical spacing slightly */
+}
+
 
 /* === Other Work (logo grid) === */
 .other-work__grid {
@@ -151,6 +168,103 @@ $scroll-offset-mobile: 64px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .other-work__item img { display: block; height: auto; }
+
+/* === Bio Photo: aligned bottom-right on wide screens; responsive on small === */
+/* ---- Bio photo: keep in normal flow on all sizes (no overlap) ---- */
+.bio-photo {
+  position: static;                 /* not absolute */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.5rem 0 0 auto;          /* right-align the block */
+  width: 75%;
+  min-width: 300px;
+  max-width: 540px;                 /* cap size */
+  text-align: right;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .bio-photo__caption {
+    font-size: 0.8rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+  }
+}
+
+/* Remove the previous absolute-on-desktop rule */
+@media (min-width: 768px) {
+  #bio { position: static; }        /* ensure no positioning context */
+  .bio-photo {                      /* stay in flow, just constrain width */
+    position: static;
+    margin: 1rem 0 0 auto;
+    max-width: 540px;
+  }
+}
+
+/* Smallest screens: allow full width */
+@media (max-width: 400px) {
+  .bio-photo { width: 100%; }
+}
+
+/* === Remove hairline gaps between other-work images ===
+   Cause is usually inline/baseline spacing on <img> and inline-blocks.
+   No HTML/Liquid changes required.
+*/
+.other-work__grid {
+  line-height: 0;             /* remove baseline gaps between inline elements */
+}
+
+.other-work__item {
+  display: block;             /* normalize wrapper */
+}
+
+.other-work__item img {
+  display: block;             /* prevents baseline/descender seams */
+  width: 100%;                /* keep image fluid in its grid cell */
+  height: auto;               /* preserve aspect ratio */
+  border: 0;                  /* defensive: ensure no default borders */
+  vertical-align: middle;     /* extra guard if display reverts in future */
+}
+
+/* === Stack other-work items vertically, aligned center === */
+.other-work__grid {
+  line-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.other-work__item {
+  display: block;
+}
+
+.other-work__item img {
+  display: block;
+  width: auto;       /* keeps consistent natural size */
+  max-width: 180px;  /* prevents oversize */
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+
+/* On small screens: stack vertically and center align */
+@media (max-width: 640px) {
+  .other-work__grid {
+    flex-direction: column;
+    align-items: center;  /* center each image horizontally */
+    gap: 1.25rem;
+  }
+
+  .other-work__item img {
+    max-width: 160px; /* optional gentle downsize for phones */
+  }
+}
+
 
 /* === Contact form (scoped, no collisions) === */
 @media (max-width: 420px) { .cf-grid { grid-template-columns: 1fr; } }
@@ -210,111 +324,8 @@ textarea.cf-control { resize: vertical; }
 
 .cf-result { text-align: center; color: var(--gray); margin-top: .5rem; }
 
-/* === Bio Photo: aligned bottom-right on wide screens; responsive on small === */
-/* ---- Bio photo: keep in normal flow on all sizes (no overlap) ---- */
-.bio-photo {
-  position: static;                 /* not absolute */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 1.5rem 0 0 auto;          /* right-align the block */
-  width: 75%;
-  min-width: 300px;
-  max-width: 540px;                 /* cap size */
-  text-align: right;
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  .bio-photo__caption {
-    font-size: 0.8rem;
-    color: var(--text-muted, #666);
-    margin: 0;
-  }
-}
-
-/* Remove the previous absolute-on-desktop rule */
-@media (min-width: 768px) {
-  #bio { position: static; }        /* ensure no positioning context */
-  .bio-photo {                      /* stay in flow, just constrain width */
-    position: static;
-    margin: 1rem 0 0 auto;
-    max-width: 540px;
-  }
-}
-
-/* Smallest screens: allow full width */
-@media (max-width: 400px) {
-  .bio-photo { width: 100%; }
-}
-
-
-/* === Refine divider between top-work entries === */
-.top-work__rule {
-  border: none;   /* remove default border style entirely */
-  border-top: 1px solid rgba(74, 122, 156, 0.4); /* same as overlay */
-  margin: 1.2rem 0;   /* tighten vertical spacing slightly */
-}
-
-/* === Remove hairline gaps between other-work images ===
-   Cause is usually inline/baseline spacing on <img> and inline-blocks.
-   No HTML/Liquid changes required.
-*/
-.other-work__grid {
-  line-height: 0;             /* remove baseline gaps between inline elements */
-}
-
-.other-work__item {
-  display: block;             /* normalize wrapper */
-}
-
-.other-work__item img {
-  display: block;             /* prevents baseline/descender seams */
-  width: 100%;                /* keep image fluid in its grid cell */
-  height: auto;               /* preserve aspect ratio */
-  border: 0;                  /* defensive: ensure no default borders */
-  vertical-align: middle;     /* extra guard if display reverts in future */
-}
-
-/* === Stack other-work items vertically, aligned center === */
-.other-work__grid {
-  line-height: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.other-work__item {
-  display: block;
-}
-
-.other-work__item img {
-  display: block;
-  width: auto;       /* keeps consistent natural size */
-  max-width: 180px;  /* prevents oversize */
-  height: auto;
-  border: 0;
-  vertical-align: middle;
-}
-
-/* On small screens: stack vertically and center align */
-@media (max-width: 640px) {
-  .other-work__grid {
-    flex-direction: column;
-    align-items: center;  /* center each image horizontally */
-    gap: 1.25rem;
-  }
-
-  .other-work__item img {
-    max-width: 160px; /* optional gentle downsize for phones */
-  }
-}
 /* === Unify call_to_action link styling ===
-   Uses the project’s --color-kb-accent variable for full consistency.
+   Uses the project’s --color-kc-accent variable for full consistency.
 */
 .top-work__call,
 .other-work__call {

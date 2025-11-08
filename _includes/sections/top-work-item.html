@@ -2,48 +2,27 @@
 Template for each Top Work item or card from a collection.
 Receives front-matter values from the _top-work/ collection.
 Handles text, call_to_action, and image linking/normalization.
+Consists of three blocks —
+  1) .top-work__title  (title only)
+  2) .top-work__image  (image + optional link)
+  3) .top-work__more   (description + call_to_action)
 {%- endcomment -%}
 
 <div class="top-work">
+  <!-- [1] Title only -->
+  <h3 class="top-work__title">{{ include.title }}</h3>
 
-  <!-- [1] TEXT BLOCK -->
-  <div class="top-work__text">
-
-    <!-- [1a] Title -->
-    <h3 class="top-work__title">{{ include.title }}</h3>
-
-<!-- [1c] Call to action (always present, supports Markdown) -->
-<p class="top-work__call">
-  {{ include.call_to_action
-     | markdownify
-     | replace: '<a href="', '<a target="_blank" rel="noopener" href="' }}
-</p>
-
-    <!-- [1b] Description (supports Markdown) -->
-    {% if include.desc %}
-      <div class="top-work__desc">
-        {{ include.desc | markdownify }}
-      </div>
-    {% endif %}
-
-  </div>
-  <!-- [END TEXT BLOCK] -->
-
- <!-- [2] IMAGE BLOCK -->
+  <!-- [2] IMAGE BLOCK (same normalization as before) -->
   {% assign img_src = include.image %}
-
   {% if include.image_file %}
     {% if include.image == nil or include.image == '' %}
       {% assign img_src = '/assets/media/' | append: include.image_file %}
     {% endif %}
   {% endif %}
-  
   {% if img_src %}
     {% unless img_src contains '://' %}
       {% assign first_char = img_src | slice: 0, 1 %}
-      {% if first_char != '/' %}
-        {% assign img_src = '/' | append: img_src %}
-      {% endif %}
+      {% if first_char != '/' %}{% assign img_src = '/' | append: img_src %}{% endif %}
       {% assign img_src = img_src | relative_url %}
     {% endunless %}
   {% endif %}
@@ -52,31 +31,39 @@ Handles text, call_to_action, and image linking/normalization.
   {% if link_href %}
     {% unless link_href contains '://' %}
       {% assign first_char = link_href | slice: 0, 1 %}
-      {% if first_char != '/' %}
-        {% assign link_href = '/' | append: link_href %}
-      {% endif %}
+      {% if first_char != '/' %}{% assign link_href = '/' | append: link_href %}{% endif %}
       {% assign link_href = link_href | relative_url %}
     {% endunless %}
   {% endif %}
 
   {% if img_src %}
     <div class="top-work__image">
-
-      <!-- [2a] If image_link is provided, wrap image in <a> -->
       {% if link_href %}
         <a href="{{ link_href }}" target="_blank" rel="noopener">
           <img src="{{ img_src }}" alt="{{ include.image_alt | default: include.title }}">
         </a>
       {% else %}
-        <!-- [2b] Otherwise, plain image -->
         <img src="{{ img_src }}" alt="{{ include.image_alt | default: include.title }}">
       {% endif %}
-
     </div>
   {% endif %}
-  <!-- [END IMAGE BLOCK] -->
 
+  <!-- [3] Supporting text: description + call_to_action -->
+  <div class="top-work__more">
+    {% if include.desc %}
+      <div class="top-work__desc">
+        {{ include.desc | markdownify }}
+      </div>
+    {% endif %}
+    {% if include.call_to_action %}
+      <p class="top-work__call">
+        {{ include.call_to_action
+           | markdownify
+           | replace: '<a href="', '<a target="_blank" rel="noopener" href="' }}
+      </p>
+    {% endif %}
+  </div>
 </div>
 
-<!-- [3] Divider line between entries -->
+<!-- Divider between entries -->
 <hr class="top-work__rule">
