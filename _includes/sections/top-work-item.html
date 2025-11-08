@@ -50,20 +50,19 @@ Consists of three blocks —
 
   <!-- [3] Supporting text: description + call_to_action -->
   <div class="top-work__more">
-    {% if include.desc %}
-      <div class="top-work__desc">
-        {{ include.desc | markdownify }}
-      </div>
-    {% endif %}
-    {% if include.call_to_action %}
+     {% if include.call_to_action %}
       <p class="top-work__call">
         {{ include.call_to_action
            | markdownify
            | replace: '<a href="', '<a target="_blank" rel="noopener" href="' }}
       </p>
     {% endif %}
+    {% if include.desc %}
+      <div class="top-work__desc">
+        {{ include.desc | markdownify }}
+      </div>
+    {% endif %}
   </div>
 </div>
-
 <!-- Divider between entries -->
 <hr class="top-work__rule">
