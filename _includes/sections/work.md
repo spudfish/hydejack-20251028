@@ -8,14 +8,13 @@
   {% assign items = site["top-work"] | sort: "order" %}
   {% for i in items %}
 
-    {% include top-work.html
+    {% include sections/top-work-item.html
        title=i.title
        desc=i.desc
        call_to_action=i.call_to_action
        image_file=i.image_file
        image_link=i.image_link
-       image_alt=i.image_alt
-    %}
+       image_alt=i.image_alt    %}
   {% endfor %}
 
   <!-- SUBSECTION HEADING 2 of 2: Other Work -->

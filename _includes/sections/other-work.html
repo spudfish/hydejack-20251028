@@ -10,11 +10,10 @@
   {% assign items = site["other-work"] | sort: "order" %}
   {% for i in items %}
     <!-- INCLUDE: per-item renderer (/_includes/other-work.html) -->
-    {% include other-work.html
+    {% include sections/other-work-item.html
       image_file=i.image_file
       link_url=i.link_url
       alt=i.alt
       title=i.title %}
   {% endfor %}
 </div>
-<!-- [END OTHER WORK SECTION WRAPPER] -->
