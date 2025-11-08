@@ -1,3 +1,9 @@
+# Variables
+# =======================================================================
+#  - In Hydejack Free, these are not wired into the theme automatically.
+#  - They won’t affect your CSS unless you explicitly reference them.
+#  - Keeping them is fine — they’re useful documentation for future ref.
+# ------------------------------------------------------------------------
 root_font_size: 15 # px
 root_font_size_medium: 16 # px
 root_font_size_large: 17 # px

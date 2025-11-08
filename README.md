@@ -1,14 +1,22 @@
 # Tal's Site Transfer and Update 2025
 
+This Jekyll site uses Hydejack Free 9.2.1.
+All custom templates live under `_includes/sections/`.
+Custom CSS is in `_sass/my-style.scss`.
+`tools/` holds local design assets not deployed to `_site/`.
+Two custom collections: top-work, other-work
+
+Maintained by [KCannon], volunteer.
+
 Developed by Kathy Cannon in October 2025, as follows:
 * Editing problems with Wix made their service unusable
 * Wanted paid-tier Weebly but Square support waning uncertainly
 * ChatGPT search described the free tier in GitHub hosting
-    * a goodwill service helping freelancers 
+    * a goodwill service helping freelancers
     * and supporting entry to paid services
 * Agreed w client on Hydejack template with GitHub Pages tool
 * Compared web contact email services:
-    * chose Web3Forms over Formspree 
+    * chose Web3Forms over Formspree
     * Has no-storage privacy policy
 * Located domain registrar account at ASmallOrange
 * Recommend registrar transfer by March 2026
@@ -33,28 +41,28 @@ Developed by Kathy Cannon in October 2025, as follows:
     * withdrew all identifiable traces next day
 
 * Brought old-school 1999–2015 know-how in Dreamweaver from
-    * only HTML5 and CSS without compilers or scripting 
+    * only HTML5 and CSS without compilers or scripting
     * into the compiler world of GitHub
     * THIS LEARNING CURVE WAS SO STEEP into Github
-* Set up local copy of repository with abstracted workflow 
+* Set up local copy of repository with abstracted workflow
     * re-learned basic terminal commands (with Spouso help)
     * installed new project verdion Ruby from Homebrew
     * avoided install macOS command line tools
     * followed vaguely-understood AI help suggestions
 * Edited with CotEditor, pushed commits with GutHhb Desktop
-    * Put off Visual Studio w co-pilot workflow  
+    * Put off Visual Studio w co-pilot workflow
 * Repository initiated from Hydejack Starter Kit
 * Repository visibility set to public, GitHhb Pages enabled
 * Functions built by Jekyll which uses:
 	* Markdown content parsed by kramdown
 	* Top-heavy Liquid templating of HTML
     * Sass driven css development, all for
-    * DRY dont repeat yourself abstractions 
-    * benefiting sprawling websites 
+    * DRY dont repeat yourself abstractions
+    * benefiting sprawling websites
 * But gained the functionality of a modern design
-* Checkout the way the image splashes with 
+* Checkout the way the image splashes with
     * a full cover image setting mood and menu
     * and slides off to the side for re-use
     * and reveals the home content while
-    * responding to device sizes and 
+    * responding to device sizes and
     * switching device-toggled dark-light modes
