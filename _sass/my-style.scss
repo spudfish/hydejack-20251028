@@ -1,11 +1,16 @@
-/* Set of blue coloring by KC at site set up */
+// ============================
+// Tal McThenia — Custom Styles
+// Single entry point for all site-specific CSS.
+// ============================
+
+/* ---- Theme color hooks (KC blues) ---- */
 :root {
-  --color-cover-overlay: rgba(74, 122, 156, 0.4) /* modern browsers */
-  --color-light-bg: #e8f2f8; /* prefers-color-scheme:light is on */
-  --color-dark-bg: #152e3d; /* prefers-color-scheme:dark is on */
+  --color-cover-overlay: rgba(74, 122, 156, 0.4); /* modern browsers */
+  --color-light-bg: #e8f2f8;  /* light mode base */
+  --color-dark-bg:  #152e3d;  /* dark mode base */
 }
 
-/* Overlay color for cover drawer's sidebar background image */
+/* Overlay for sidebar background image */
 .sidebar-bg.sidebar-overlay::before {
   content: "";
   position: absolute;
@@ -14,49 +19,53 @@
   pointer-events: none;
 }
 
-/* REMOVE toggle button for light-dark modes */
-button#_dark-mode, button#_light-mode {
-    display:none !important;
-    border:none !important;
-    }
-/* Navbar and page content background (light theme) */
+/* Hide theme dark/light toggles (project decision) */
+button#_dark-mode,
+button#_light-mode {
+  display: none !important;
+  border: none !important;
+}
+
+/* Page backdrop + navbar background (light) */
 @media (prefers-color-scheme: light) {
   body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-color: #e8f2f8;
+    background-color: var(--color-light-bg);
     pointer-events: none;
     z-index: 0;
   }
   body > * { position: relative; z-index: 1; }
-  
+
   .navbar,
   .navbar > .content,
-  .nav-btn-bar {
-    background-color: #e8f2f8 !important;
-  }
+  .nav-btn-bar { background-color: var(--color-light-bg) !important; }
 }
 
-/* Navbar and page content background (dark theme) */
+/* Page backdrop + navbar background (dark) */
 @media (prefers-color-scheme: dark) {
   body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-color: #152e3d !important;
+    background-color: var(--color-dark-bg) !important;
     pointer-events: none;
     z-index: 0;
   }
   body > * { position: relative; z-index: 1; }
-  
+
   .navbar,
   .navbar > .content,
-  .nav-btn-bar {
-    background-color: #152e3d !important;
-  }
+  .nav-btn-bar { background-color: var(--color-dark-bg) !important; }
 }
 
+/* Sidebar link emphasis (subtle depth, avoids layout shift) */
+.sidebar a {
+  text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
+}
+
+/* Download table link underline tuning (progressive enhancement) */
 .dl-table {
   a {
     @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
@@ -66,53 +75,38 @@ button#_dark-mode, button#_light-mode {
       padding-bottom: .45rem;
     }
   }
-
-}
-
-// found in hydejack kit in my-inline.scss and merged here.
- .sidebar a {
-   text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
 }
 
 /* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
-$scroll-offset: 88px; /* tweak to match your sticky header height */
-
-.anchor {
-  scroll-margin-top: $scroll-offset; /* modern browsers */
-}
-
-/* If you use in-page TOC or other anchor targets that aren't <section> */
-[id] {
-  scroll-margin-top: $scroll-offset;
-}
-
-/* Create a hidden spacer above targets when navigated, for legacy browsers */
-.anchor:target::before {
-  content: "";
-  display: block;
-  height: 88px;   /* same as $scroll-offset */
-  margin-top: -88px;
-}
-
-/* when your header is taller on small screens, this helps */
 $scroll-offset-desktop: 88px;
 $scroll-offset-mobile: 64px;
 
-.anchor { scroll-margin-top: $scroll-offset-desktop; }
+/* Modern browsers honor scroll-margin-top; legacy gets a :target spacer */
+.anchor,
+[id] { scroll-margin-top: $scroll-offset-desktop; }
 
 @media (max-width: 760px) {
-  .anchor {
-    scroll-margin-top: $scroll-offset-mobile;
-  }
+  .anchor,
+  [id] { scroll-margin-top: $scroll-offset-mobile; }
+}
 
-  .anchor:target::before {
+/* Legacy fallback spacer (applies only when a hash target is active) */
+.anchor:target::before,
+[id]:target::before {
+  content: "";
+  display: block;
+  height: $scroll-offset-desktop;
+  margin-top: -$scroll-offset-desktop;
+}
+@media (max-width: 760px) {
+  .anchor:target::before,
+  [id]:target::before {
     height: $scroll-offset-mobile;
     margin-top: -$scroll-offset-mobile;
   }
 }
 
-
-/* === for the first set of work samples with descriptions, used at the top of the work section === */
+/* === Selected Work (Top Work) === */
 .top-work {
   display: grid;
   grid-template-columns: 1fr minmax(220px, 32%);
@@ -126,7 +120,6 @@ $scroll-offset-mobile: 64px;
   &__media { margin: .5rem 0 0 0; font-size: .95rem; opacity: .9; }
 
   &__image img { width: 100%; height: auto; display: block; border-radius: .375rem; }
-
   &__rule { border: 0; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
 }
 
@@ -135,23 +128,30 @@ $scroll-offset-mobile: 64px;
   .top-work__image { order: -1; margin-bottom: .5rem; } /* image above text on small screens */
 }
 
-.top-work__image img {
-  width: 150px;          /* fixed image width */
-  height: auto;          /* preserve aspect ratio */
-  display: block;
-  border-radius: .375rem;
-  margin-left: auto;     /* keep right-aligned inside its grid cell */
-  margin-right: 0;
-}
-
+/* Right-align the image block within its grid cell */
 .top-work__image {
   display: flex;
   justify-content: flex-end;
-  align-items: start; /* or center, if you prefer vertical centering */
+  align-items: start;
+}
+.top-work__image img {
+  width: 150px;          /* fixed image width */
+  height: auto;
+  display: block;
+  border-radius: .375rem;
+  margin-left: auto;
+  margin-right: 0;
 }
 
+/* === Other Work (logo grid) === */
+.other-work__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.other-work__item img { display: block; height: auto; }
+
 /* === Contact form (scoped, no collisions) === */
-/* === stacking for very narrow screens === */
 @media (max-width: 420px) { .cf-grid { grid-template-columns: 1fr; } }
 
 .cf-wrap { margin: 2rem 0; }
@@ -169,10 +169,9 @@ $scroll-offset-mobile: 64px;
 
 .cf-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* stays two-columns even on small screens (your preference) */
+  grid-template-columns: 1fr 1fr; /* two columns by design */
   gap: 1rem 1rem;
 }
-
 .cf-field { display: flex; flex-direction: column; }
 .cf-span-2 { grid-column: 1 / -1; }
 
@@ -210,113 +209,43 @@ textarea.cf-control { resize: vertical; }
 
 .cf-result { text-align: center; color: var(--gray); margin-top: .5rem; }
 
-/* === Bio Photo === */
+/* === Bio Photo: aligned bottom-right on wide screens; responsive on small === */
+/* ---- Bio photo: keep in normal flow on all sizes (no overlap) ---- */
 .bio-photo {
-  position: relative;
+  position: static;                 /* not absolute */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 2rem;
-  margin-bottom: 0;
-  text-align: right;
-
-  img {
-    max-width: 540px;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .bio-photo__caption {
-    font-size: 0.8rem;
-    color: var(--text-muted, #666);
-    margin: 0;
-  }
-}
-
-/* Push the photo to bottom-right when there's enough width */
-@media (min-width: 768px) {
-  .bio-photo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-}
-
-/* === Bio Photo Block === */
-.bio-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: 1.5rem;
-  text-align: right;
-
-  img {
-    width: 75%;          /* 75% of the bio section's width */
-    max-width: 100%;     /* never exceed the section’s natural width */
-    min-width: 300px;    /* never shrink below 300px */
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .bio-photo__caption {
-    font-size: 0.8rem;
-    color: var(--text-muted, #666);
-    margin: 0;
-  }
-}
-
-/* === Position bottom-right on larger screens === */
-@media (min-width: 768px) {
-  #bio {
-    position: relative; /* makes the section a positioning context */
-  }
-
-  .bio-photo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 1rem;
-  }
-}/* Bio photo sits at the end of the #bio section, aligned right, no overlap */
-.bio-photo {
-  /* keep it in normal flow */
-  position: static;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  /* push the whole block to the right edge */
-  margin: 1.5rem 0 0 auto;  /* auto left margin → right align */
-  clear: both;              /* ignore any earlier floats in content */
-
-  /* size the whole block relative to the section */
+  margin: 1.5rem 0 0 auto;          /* right-align the block */
   width: 75%;
-  min-width: 300px;         /* never smaller than 300px */
-  max-width: 100%;          /* don’t exceed the section’s width */
+  min-width: 300px;
+  max-width: 540px;                 /* cap size */
   text-align: right;
-}
 
-.bio-photo img {
-  width: 100%;              /* fill the block width above */
-  max-width: 100%;          /* don’t upscale past natural size */
-  height: auto;
-  border-radius: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.bio-photo__caption {
-  font-size: 0.8rem;
-  color: var(--text-muted, #666);
-  margin: 0;
-}
-
-/* Small screens: let it just use the section width */
-@media (max-width: 400px) {
-  .bio-photo {
+  img {
     width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
   }
+  .bio-photo__caption {
+    font-size: 0.8rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+  }
+}
+
+/* Remove the previous absolute-on-desktop rule */
+@media (min-width: 768px) {
+  #bio { position: static; }        /* ensure no positioning context */
+  .bio-photo {                      /* stay in flow, just constrain width */
+    position: static;
+    margin: 1rem 0 0 auto;
+    max-width: 540px;
+  }
+}
+
+/* Smallest screens: allow full width */
+@media (max-width: 400px) {
+  .bio-photo { width: 100%; }
 }

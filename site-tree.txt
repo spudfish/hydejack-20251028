@@ -11,13 +11,13 @@
 │   ├── header.html
 │   ├── my-body.html
 │   ├── my-head.html
-│   ├── other-work.html
-│   ├── sections
-│   │   ├── bio.md
-│   │   ├── contact.md
-│   │   ├── other-work.html
-│   │   └── work.md
-│   └── top-work.html
+│   └── sections
+│       ├── bio.md
+│       ├── contact.md
+│       ├── other-work-item.html
+│       ├── other-work.html
+│       ├── top-work-item.html
+│       └── work.md
 ├── _layouts
 │   └── README.md
 ├── _other-work
@@ -26,9 +26,7 @@
 │   ├── other-popula.md
 │   └── other-vanity.md
 ├── _sass
-│   ├── my-inline.scss
-│   ├── my-style.scss
-│   └── top-work.scss
+│   └── my-style.scss
 ├── _top-work
 │   ├── top-case.md
 │   ├── top-ghost.md
@@ -85,4 +83,4 @@
             ├── source.svg
             └── svgo.config.mjs
 
-18 directories, 68 files
+18 directories, 66 files
