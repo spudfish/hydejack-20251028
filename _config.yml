@@ -102,6 +102,7 @@ exclude:
 - Gemfile.lock
 - functions
 - "*-unused.md"
+- tools/
 include:
 - _routes.json
 - ".well-known"
