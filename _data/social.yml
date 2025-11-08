@@ -108,7 +108,7 @@ dropbox:
   icon: icon-dropbox
 ondrive:
   name: OneDrive
-  icon: icon-ondrive
+  icon: icon-onedrive
 github:
   name: GitHub
   icon: icon-github
@@ -217,18 +217,18 @@ download:
 signal:
   name: Signal
   icon: icon-signal
-  prepend: https://signal.group/
+  prepend: "https://signal.group/"
 threads:
   name: Threads
   icon: icon-threads
-  prepend: https://threads.net/
+  prepend: "https://threads.net/"
 playstation:
   name: PlayStation
   icon: icon-playstation
 messenger:
   name: Messenger
   icon: icon-messenger
-  prepend: https://messenger.com/
+  prepend: "https://messenger.com/"
 stripe:
   name: Stripe
   icon: icon-stripe
@@ -242,7 +242,7 @@ gitlab:
 line:
   name: Line
   icon: icon-line
-  prepend: https://line.me/
+  prepend: "https://line.me/"
 medium:
   name: Medium
   icon: icon-medium
@@ -250,14 +250,14 @@ medium:
 xbox:
   name: Xbox
   icon: icon-xbox
-  prepend: https://xbox.com/play/user/
+  prepend: "https://xbox.com/play/user/"
 wechat:
   name: WeChat
   icon: icon-wechat
 discord:
   name: Discord
   icon: icon-discord
-  prepend: https://discord.com/invite/
+  prepend: "https://discord.com/invite/"
 mastodon:
   name: Mastodon
   icon: icon-mastodon

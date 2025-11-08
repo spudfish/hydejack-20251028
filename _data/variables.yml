@@ -1,29 +1,24 @@
----
----
+root_font_size: 15 # px
+root_font_size_medium: 16 # px
+root_font_size_large: 17 # px
 
----
-  root_font_size: 15 #px
-  root_font_size_medium: 16 #px
-  root_font_size_large: 17 #px
+root_font_size_print: 8 # pt
+root_line_height: 1.5
 
-  root_font_size_print: 8 #pt
+font_weight: 350          # normal
+font_weight_bold: 500     # bold
+font_weight_heading: 700  # heavy
 
-  root_line_height: 1.5
+content_width: 42   # rem
+content_width_2: 48 # rem
+content_width_5: 54 # rem
 
-  font_weight: 350 #=normal
-  font_weight_bold: 500 #=bold
-  font_weight_heading: 700 #=black (heavy)
+sidebar_width: 21   # rem
+border_radius: 0.5  # rem
 
-  content_width: 42 #rem
-  content_width_2: 48 #rem
-  content_width_5: 54 #rem
-
-  sidebar_width: 21 #rem
-  border_radius: 0.5 #rem
-
-  break_point_1: 42 #em
-  break_point_2: 54 #em
-  break_point_3: 64 #em
-  break_point_4: 72 #em
-  break_point_5: 86 #em
-  break_point_font_large: 124 #em
+break_point_1: 42  # em
+break_point_2: 54  # em
+break_point_3: 64  # em
+break_point_4: 72  # em
+break_point_5: 86  # em
+break_point_font_large: 124 # em
