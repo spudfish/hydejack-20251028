@@ -1,9 +1,15 @@
 ---
+# NOTE:
+# These triple-dash lines are YAML front matter.
+# They signal to Jekyll that this file must be processed by the Sass engine
+# before being copied to the /assets/css directory.
+# Do not remove them, or Sass compilation will be skipped.
 ---
-/* main.scss — compiled by Jekyll into /assets/css/main.css */
 
-/* Import your project styles from _sass/ */
-@import "top-work";
-@import "my-style";
-/* add this if you want that file too: */
-/* @import "my-inline"; */
+/* main.scss — compiled by Jekyll into /assets/css/main.css
+   Updated for modern Sass module syntax (replaces @import)
+   Jekyll automatically includes `_sass/` in its load paths,
+   so partials can be referenced by name only.
+*/
+
+@use "my-style" as *;

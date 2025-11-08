@@ -1,12 +1,18 @@
-<!-- Custom site header loaded by Hydejack.
-     Add HTML tags here to be included in the head.
-     Appears at the top of every page, including the one-page index.html.
-     -->
+<!--
+  Custom site header — top navigation for one-page layout.
+  Notes for future maintainer (hi future me!):
+  - Each link uses {{ '/' | relative_url }} so anchors always resolve to the homepage,
+    even when the user lands on 404.html or another sub-page.
+  - Hydejack’s SPA navigation can sometimes keep partial URLs in memory,
+    but this prefix safely resets context to the home document.
+  - If you ever rename section IDs (e.g. #work, #bio, #contact),
+    update both the section include and these anchors.
+-->
 
 <header class="site-header">
   <nav class="page-nav" role="navigation">
-    <a href="#work">Work</a>
-    <a href="#bio">Bio</a>
-    <a href="#contact">Contact</a>
+    <a href="{{ '/' | relative_url }}#work">Work</a>
+    <a href="{{ '/' | relative_url }}#bio">Bio</a>
+    <a href="{{ '/' | relative_url }}#contact">Contact</a>
   </nav>
 </header>

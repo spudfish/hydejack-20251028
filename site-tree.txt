@@ -1,0 +1,88 @@
+.
+├── _config.yml
+├── _data
+│   ├── authors.yml
+│   ├── social.yml
+│   ├── strings.yml
+│   └── variables.yml
+├── _includes
+│   ├── contact.html
+│   ├── footer.html
+│   ├── header.html
+│   ├── my-body.html
+│   ├── my-head.html
+│   ├── other-work.html
+│   ├── sections
+│   │   ├── bio.md
+│   │   ├── contact.md
+│   │   ├── other-work.html
+│   │   └── work.md
+│   └── top-work.html
+├── _layouts
+│   └── README.md
+├── _other-work
+│   ├── other-atlas.md
+│   ├── other-mosa.md
+│   ├── other-popula.md
+│   └── other-vanity.md
+├── _sass
+│   ├── my-inline.scss
+│   ├── my-style.scss
+│   └── top-work.scss
+├── _top-work
+│   ├── top-case.md
+│   ├── top-ghost.md
+│   ├── top-shift.md
+│   └── top-strange.md
+├── .github
+│   └── workflows
+│       └── jekyll.yml
+├── .gitignore
+├── .ruby-version
+├── 404.md
+├── assets
+│   ├── css
+│   │   └── main.scss
+│   ├── icons
+│   │   ├── android-chrome-192x192.png
+│   │   ├── android-chrome-512x512.png
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   ├── favicon.ico
+│   │   ├── icon-128x128.png
+│   │   ├── icon-144x144.png
+│   │   ├── icon-152x152.png
+│   │   ├── icon-192x192.png
+│   │   ├── icon-384x384.png
+│   │   ├── icon-512x512.png
+│   │   ├── icon-72x72.png
+│   │   └── icon-96x96.png
+│   ├── img
+│   │   ├── logo.png
+│   │   └── sidebar-bg.jpg
+│   └── media
+│       ├── atlas.png
+│       ├── case.png
+│       ├── ghost.jpg
+│       ├── ghost.png
+│       ├── mosa.png
+│       ├── nickjr.png
+│       ├── popula.png
+│       ├── shift.jpg
+│       ├── strange.jpg
+│       ├── tal.jpg
+│       └── vanity.png
+├── Gemfile
+├── Gemfile.lock
+├── index.md
+├── README.md
+├── site-tree.txt
+└── tools
+    └── assets-src
+        └── icons
+            ├── optimized.svg
+            ├── source.svg
+            └── svgo.config.mjs
+
+18 directories, 68 files

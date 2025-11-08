@@ -1,6 +1,3 @@
-/* DEPRECATED: @import "top-work"; */
-@use "top-work" as *;
-
 /* Set of blue coloring by KC at site set up */
 :root {
   --color-cover-overlay: rgba(74, 122, 156, 0.4) /* modern browsers */
@@ -72,6 +69,11 @@ button#_dark-mode, button#_light-mode {
 
 }
 
+// found in hydejack kit in my-inline.scss and merged here.
+ .sidebar a {
+   text-shadow: rgba(0, 0, 0, 0.25) 0.1rem 0.1rem 0.15rem;
+}
+
 /* ----- Smooth-scroll offset so anchored headings aren't hidden under the sticky header ----- */
 $scroll-offset: 88px; /* tweak to match your sticky header height */
 
@@ -92,9 +94,7 @@ $scroll-offset: 88px; /* tweak to match your sticky header height */
   margin-top: -88px;
 }
 
-
 /* when your header is taller on small screens, this helps */
-
 $scroll-offset-desktop: 88px;
 $scroll-offset-mobile: 64px;
 
@@ -109,6 +109,45 @@ $scroll-offset-mobile: 64px;
     height: $scroll-offset-mobile;
     margin-top: -$scroll-offset-mobile;
   }
+}
+
+
+/* === for the first set of work samples with descriptions, used at the top of the work section === */
+.top-work {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 32%);
+  gap: 1.2rem;
+  align-items: start;
+  margin: 1.5rem 0;
+
+  &__title { margin: 0 0 .5rem 0; font-size: 1.1rem; line-height: 1.3; }
+  &__desc  { margin: 1rem 0; }
+  &__call  { margin: 1rem 0 0 0; }
+  &__media { margin: .5rem 0 0 0; font-size: .95rem; opacity: .9; }
+
+  &__image img { width: 100%; height: auto; display: block; border-radius: .375rem; }
+
+  &__rule { border: 0; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
+}
+
+@media (max-width: 760px) {
+  .top-work { grid-template-columns: 1fr; }
+  .top-work__image { order: -1; margin-bottom: .5rem; } /* image above text on small screens */
+}
+
+.top-work__image img {
+  width: 150px;          /* fixed image width */
+  height: auto;          /* preserve aspect ratio */
+  display: block;
+  border-radius: .375rem;
+  margin-left: auto;     /* keep right-aligned inside its grid cell */
+  margin-right: 0;
+}
+
+.top-work__image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: start; /* or center, if you prefer vertical centering */
 }
 
 /* === Contact form (scoped, no collisions) === */
