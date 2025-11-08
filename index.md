@@ -1,7 +1,7 @@
 ---
+layout: default_noarticle
 title: Tal McThenia
 permalink: "/"
-layout: default
 subtitle: Writer
 ---
 
