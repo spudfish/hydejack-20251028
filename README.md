@@ -6,8 +6,7 @@ Custom CSS is in `_sass/my-style.scss`.
 `tools/` holds local design assets not deployed to `_site/`.
 Two custom collections: top-work, other-work
 
-Maintained by [KCannon], volunteer.
-
+Maintained by [KCannon] as a pro bono project.
 Developed by Kathy Cannon in October 2025, as follows:
 * Editing problems with Wix made their service unusable
 * Wanted paid-tier Weebly but Square support waning uncertainly
