@@ -5,7 +5,8 @@
 
 /* ---- Theme color hooks (KC blues) ---- */
 :root {
-  --color-cover-overlay: rgba(74, 122, 156, 0.4); /* modern browsers */
+  --color-cover-overlay: rgba(74, 122, 156, 0.4);
+  --color-kc-accent: rgba(74, 122, 156, 0.5);
   --color-light-bg: #e8f2f8;  /* light mode base */
   --color-dark-bg:  #152e3d;  /* dark mode base */
 }
@@ -249,3 +250,107 @@ textarea.cf-control { resize: vertical; }
 @media (max-width: 400px) {
   .bio-photo { width: 100%; }
 }
+
+
+/* === Refine divider between top-work entries === */
+.top-work__rule {
+  border: none;   /* remove default border style entirely */
+  border-top: 1px solid rgba(74, 122, 156, 0.4); /* same as overlay */
+  margin: 1.2rem 0;   /* tighten vertical spacing slightly */
+}
+
+/* === Remove hairline gaps between other-work images ===
+   Cause is usually inline/baseline spacing on <img> and inline-blocks.
+   No HTML/Liquid changes required.
+*/
+.other-work__grid {
+  line-height: 0;             /* remove baseline gaps between inline elements */
+}
+
+.other-work__item {
+  display: block;             /* normalize wrapper */
+}
+
+.other-work__item img {
+  display: block;             /* prevents baseline/descender seams */
+  width: 100%;                /* keep image fluid in its grid cell */
+  height: auto;               /* preserve aspect ratio */
+  border: 0;                  /* defensive: ensure no default borders */
+  vertical-align: middle;     /* extra guard if display reverts in future */
+}
+
+/* === Stack other-work items vertically, aligned center === */
+.other-work__grid {
+  line-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.other-work__item {
+  display: block;
+}
+
+.other-work__item img {
+  display: block;
+  width: auto;       /* keeps consistent natural size */
+  max-width: 180px;  /* prevents oversize */
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+
+/* On small screens: stack vertically and center align */
+@media (max-width: 640px) {
+  .other-work__grid {
+    flex-direction: column;
+    align-items: center;  /* center each image horizontally */
+    gap: 1.25rem;
+  }
+
+  .other-work__item img {
+    max-width: 160px; /* optional gentle downsize for phones */
+  }
+}
+/* === Unify call_to_action link styling ===
+   Uses the project’s --color-kb-accent variable for full consistency.
+*/
+.top-work__call,
+.other-work__call {
+  margin-top: 0.75rem; /* consistent spacing */
+}
+
+.top-work__call a,
+.other-work__call a,
+.call_to_action a {
+  color: var(--color-kc-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: from-font;
+  transition: text-decoration-thickness 120ms ease, opacity 120ms ease;
+}
+
+.top-work__call a:hover,
+.other-work__call a:hover,
+.call_to_action a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.top-work__call a:visited,
+.other-work__call a:visited,
+.call_to_action a:visited {
+  color: var(--color-kc-accent);
+  opacity: 0.9;
+}
+
+.top-work__call a:focus-visible,
+.other-work__call a:focus-visible,
+.call_to_action a:focus-visible {
+  outline: 2px solid var(--color-kc-accent);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+
