@@ -4,6 +4,6 @@
   <h1>Contact</h1>
         <p markdown="1" class="text-gray-400 dark:text-gray-400">
 	      [Literary Agent: Zoë Pagnamenta, Calligraph](https://www.calligraphlit.com/)</p>
- {% include contact.html %}
+ {% include sections/contact.html %}
 </section>
 <!-- [END CONTACT SECTION WRAPPER] -->
