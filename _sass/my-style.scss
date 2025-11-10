@@ -37,6 +37,9 @@ body nav#breadcrumbs {
   color: var(--text); /* automatically adapts to dark/light mode */
   white-space: nowrap;
 }
+img#_swipe {
+  display: none !important;
+}
 /* === Pseudo-element swipe reminder under .sidebar-social === */
 header#_sidebar.sidebar::after {
   content: "";
@@ -51,6 +54,7 @@ header#_sidebar.sidebar::after {
   background-position: center;
   background-size: contain;
   pointer-events: none; /* purely decorative */
+  opacity: 65%;
   z-index: 15; /* well above bg overlay */
 }
 /* Larger on wider screens */
@@ -61,11 +65,12 @@ header#_sidebar.sidebar::after {
     bottom: 3rem;
   }
 }
-
 header#_sidebar a.sidebar-title h2.h1 {
-  font-size: 1.65rem !important;
+  font-size: 1.5rem !important;
 }
-
+header#_sidebar div.sidebar-about p {
+  font-size: 1.25rem !important;
+}
 /* Reduce top margin on the first H1 in the main content area */
 main #work h1 {
   margin-top: 0;
