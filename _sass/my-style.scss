@@ -61,6 +61,11 @@ header#_sidebar.sidebar::after {
     bottom: 3rem;
   }
 }
+
+header#_sidebar a.sidebar-title h2.h1 {
+  font-size: 1.65rem !important;
+}
+
 /* Reduce top margin on the first H1 in the main content area */
 main #work h1 {
   margin-top: 0;
