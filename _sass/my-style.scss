@@ -37,6 +37,7 @@ body nav#breadcrumbs {
   color: var(--text); /* automatically adapts to dark/light mode */
   white-space: nowrap;
 }
+/* === hide the hydejack inconsistent swipe  === */
 header#_sidebar.sidebar img#_swipe {
   display: none !important;
 }
