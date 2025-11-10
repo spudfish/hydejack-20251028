@@ -15,14 +15,16 @@ menu:
   url: "#bio"
 - title: Contact
   url: "#contact"
-copyright: "© 2025. All rights reserved."
+copyright: "© 2025 Tal McThenia. All rights reserved
+<br/>Background image: South River Dam & Lock built circa 1859 on the Maury River in Lexington, Virginia (via LOC's Public Domain Archive)
+<br/>Site developed October 2025 by Kathy Cannon from HydeJack Template (free version) hosted on GitHub Pages"
 theme: jekyll-theme-hydejack
 accent_image: "/assets/img/sidebar-bg.jpg"
 accent_color: rgb(144,176,200)
 theme_color: rgb(48,95,135)
-google_fonts: "Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wdth,wght@87.5,300..800&display=swap"
-font:                  Open Sans, Helvetica, Arial, sans-serif
-font_heading:          Noticia Text, Open Sans, Helvetica, Arial, sans-serif
+google_fonts: "Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wdth,wght@80,300..800&display=swap"
+font: Open Sans, Helvetica, Arial, sans-serif
+font_heading: Noticia Text, Open Sans, Helvetica, Arial, sans-serif
 defaults:
 - scope:
     path: assets/
@@ -47,13 +49,11 @@ defaults:
     seo:
       type: WebPage
 markdown: kramdown
-
 kramdown:
   input: GFM          # Enables GitHub-Flavored Markdown (better link and list handling)
   hard_wrap: false
   auto_ids: true
   syntax_highlighter: rouge
-
 hydejack:
   post_addons: []
   project_addons: []

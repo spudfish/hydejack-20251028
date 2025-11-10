@@ -37,7 +37,30 @@ body nav#breadcrumbs {
   color: var(--text); /* automatically adapts to dark/light mode */
   white-space: nowrap;
 }
-
+/* === Pseudo-element swipe reminder under .sidebar-social === */
+header#_sidebar.sidebar::after {
+  content: "";
+  position: absolute;
+  bottom: 2rem; /* distance from bottom edge of drawer */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem; /* base size */
+  height: 3rem;
+  background-image: url("/assets/img/index-left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none; /* purely decorative */
+  z-index: 15; /* well above bg overlay */
+}
+/* Larger on wider screens */
+@media (min-width: 42em) {
+  header#_sidebar.sidebar::after {
+    width: 5rem;
+    height: 5rem;
+    bottom: 3rem;
+  }
+}
 /* Reduce top margin on the first H1 in the main content area */
 main #work h1 {
   margin-top: 0;
