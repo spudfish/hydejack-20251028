@@ -6,7 +6,7 @@
 
 <!-- KC's ADDED link: Following suggestion that this location for bringing in a project-specific set of css rules ensures that my project styles load after the primary hydejack theme. This provides a proper cascade where my specifics override the main theme. -->
 
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
 <!-- KC's ADDED: to set up hCaptcha to catch spam on contact form.  -->
 
@@ -14,49 +14,75 @@
 
 <!-- KC ADDED: Web3Forms validator (safe for Hydejack navigation) -->
 <script>
-const form = document.getElementById("form");
-const result = document.getElementById("result");
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
 
-form.addEventListener("submit", function (e) {
-  const formData = new FormData(form);
-  e.preventDefault();
-  var object = {};
-  formData.forEach((value, key) => {
-    object[key] = value;
-  });
-  var json = JSON.stringify(object);
-  result.innerHTML = "Please wait...";
-
-  fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: json
-  })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
-        result.innerHTML = json.message;
-        result.classList.remove("text-gray-500");
-        result.classList.add("text-green-500");
-      } else {
-        console.log(response);
-        result.innerHTML = json.message;
-        result.classList.remove("text-gray-500");
-        result.classList.add("text-red-500");
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      result.innerHTML = "Something went wrong!";
-    })
-    .then(function () {
-      form.reset();
-      setTimeout(() => {
-        result.style.display = "none";
-      }, 5000);
+  form.addEventListener("submit", function (e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+    var object = {};
+    formData.forEach((value, key) => {
+      object[key] = value;
     });
-});
+    var json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+          result.classList.remove("text-gray-500");
+          result.classList.add("text-green-500");
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+          result.classList.remove("text-gray-500");
+          result.classList.add("text-red-500");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+</script>
+
+<script>
+  (function () {
+    // Attach click-to-home once the injected navbar exists
+    function attach() {
+      var span = document.querySelector("#_navbar .nav-span");
+      if (!span) return false;
+      span.style.cursor = "pointer";
+      span.addEventListener(
+        "click",
+        function () {
+          window.location = "{{ '/' | relative_url }}"; // Liquid resolves to your site root
+        },
+        { once: true }
+      );
+      return true;
+    }
+
+    // Try now; if not present yet, watch for it
+    if (!attach()) {
+      new MutationObserver(function (muts, obs) {
+        if (attach()) obs.disconnect();
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    }
+  })();
 </script>
