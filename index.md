@@ -4,8 +4,8 @@ title: Tal McThenia
 permalink: "/"
 subtitle: Writer
 redirect_from:
-  - /more-works/
   - /in-the-works/
+  - /more-works/
 ---
 
 {% capture fullpage %}
