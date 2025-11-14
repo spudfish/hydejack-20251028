@@ -22,7 +22,7 @@ group :jekyll_plugins do    #If you remove a plugin from here, remove it from _c
   gem "jekyll-include-cache"    #Hydejack uses this; speeds up includes
   gem "jekyll-seo-tag"          # useful 2025 1101 per ChatGPT cleanup for SiteLeaf
   gem "jekyll-sitemap"          # useful 2025 1101 per same
-#  gem "jekyll-redirect-from"    # handy when you rename pages/sections
+  gem "jekyll-redirect-from"    # handy when you rename pages/sections
 #  gem "jekyll-default-layout"          # restore later if needed
 #  gem "jekyll-feed"                 # for blog sites
 #  gem "jekyll-paginate"            # for blog sites, not needed for Ta's site

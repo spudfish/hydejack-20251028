@@ -15,9 +15,10 @@ menu:
   url: "#bio"
 - title: Contact
   url: "#contact"
-copyright: "© 2025 Tal McThenia. All rights reserved
-<br/>Background pic: South River Dam & Lock on the Maury River in Lexington, Virginia (via LOC's Public Domain Archive)
-<br/>Site built Nov-2025 by Kathy Cannon from HydeJack (free version) hosted on GitHub Pages"
+copyright: >
+  © 2025 Tal McThenia. All rights reserved
+  <br/>Background pic: South River Dam & Lock on the Maury River in Lexington, Virginia (via LOC's Public Domain Archive)
+  <br/>Site built Nov-2025 by Kathy Cannon from HydeJack (free version) hosted on GitHub Pages
 theme: jekyll-theme-hydejack
 accent_image: "/assets/img/sidebar-bg.jpg"
 accent_color: rgb(144,176,200)
