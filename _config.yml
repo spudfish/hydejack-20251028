@@ -112,6 +112,7 @@ plugins:
 - jekyll-include-cache
 - jekyll-seo-tag
 - jekyll-sitemap
+- jekyll-redirect-from
 optional_front_matter:
   remove_originals: true
 readme_index:
